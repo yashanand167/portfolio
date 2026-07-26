@@ -6,7 +6,11 @@ import {
   SiPostgresql,
   SiReact,
   SiTypescript,
+  SiGit,
+  SiGithub,
+  SiFramer,
 } from "react-icons/si";
+import { TbPalette } from "react-icons/tb";
 
 import { cn } from "@/lib/utils";
 
@@ -24,6 +28,11 @@ const techStack: TechItem[] = [
   { name: "Node.js", icon: SiNodedotjs, color: "#339933" },
   { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
   { name: "Figma", icon: SiFigma, color: "#F24E1E" },
+  { name: "Git", icon: SiGit, color: "#F05032" },
+{ name: "GitHub", icon: SiGithub, useForeground: true },
+
+{ name: "Framer", icon: SiFramer, useForeground: true },
+{ name: "Product Design", icon: TbPalette, color: "#8B5CF6" },
 ];
 
 function TechBadge({ name, icon: Icon, color, useForeground }: TechItem) {

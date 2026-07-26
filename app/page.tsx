@@ -5,11 +5,11 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <main className="mx-auto flex w-full max-w-4xl flex-col px-4 py-16 sm:px-6 lg:px-8">
+      <main className="mx-auto flex w-full max-w-3xl flex-col px-4 py-16 sm:px-6 lg:px-8">
         <Header />
 
         <section className="mt-10 w-full">
-          <h1 className="text-2xl font-medium sm:text-3xl lg:text-4xl">
+          <h1 className="text-2xl font-medium sm:text-2xl lg:text-3xl">
             <span className="inline-flex items-center gap-2">
               <span>Hi, I am</span>
               <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
