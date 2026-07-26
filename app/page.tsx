@@ -9,16 +9,35 @@ export default function Home() {
           <Header />
         </div>
         <div className="mt-5">
-          <Image src="" alt=""/>
-          <h1>Hi, I am Yash Anand</h1>
-          <p>
+          {/* <Image src="" alt=""/> */}
+          <h1 className="font-medium text-2xl sm:text-2xl lg:text-3xl">
+            Hi, I am Yash Anand
+          </h1>
+          <p className="text-neutral-600 sm:text-lg mt-2">
             A design-focused software engineer building rich and sleek web
             applications <br />
             with modern technologies and minimalistic design.
           </p>
-          <p>
-            I build modern applications using 
-            <span></span>
+          <p className="mt-5">
+            I build modern applications using
+            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
+              TypeScript
+            </span>
+            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
+              Next.js
+            </span>
+            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
+              React.js
+            </span>
+            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
+              Node.js
+            </span>
+            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
+              Postgresql
+            </span>
+            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
+              Figma
+            </span>
           </p>
         </div>
       </main>
