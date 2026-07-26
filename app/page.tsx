@@ -1,45 +1,24 @@
 import Header from "@/components/header";
-import Image from "next/image";
+import TechStack from "@/components/tech-stack";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen items-center justify-center font-sans text-black">
-      <main className="flex w-full max-w-4xl flex-col items-center justify-between py-16 px-4 text-black sm:items-start ">
-        <div className="flex justify-center">
-          <Header />
-        </div>
-        <div className="mt-5">
-          {/* <Image src="" alt=""/> */}
-          <h1 className="font-medium text-2xl sm:text-2xl lg:text-3xl">
+    <div className="min-h-screen text-black">
+      <main className="mx-auto flex w-full max-w-4xl flex-col px-4 py-16 sm:px-6 lg:px-8">
+        <Header />
+
+        <section className="mt-10 w-full">
+          <h1 className="text-2xl font-medium sm:text-3xl lg:text-4xl">
             Hi, I am Yash Anand
           </h1>
-          <p className="text-neutral-600 sm:text-lg mt-2">
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-neutral-600 sm:text-lg">
             A design-focused software engineer building rich and sleek web
-            applications <br />
-            with modern technologies and minimalistic design.
+            applications with modern technologies and minimalistic design.
           </p>
-          <p className="mt-5">
-            I build modern applications using
-            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
-              TypeScript
-            </span>
-            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
-              Next.js
-            </span>
-            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
-              React.js
-            </span>
-            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
-              Node.js
-            </span>
-            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
-              Postgresql
-            </span>
-            <span className="bg-neutral-200 p-2 rounded-lg mx-2">
-              Figma
-            </span>
-          </p>
-        </div>
+          <TechStack />
+        </section>
+
+        
       </main>
     </div>
   );
