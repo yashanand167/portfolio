@@ -89,6 +89,32 @@ body {
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+
+[data-theme="purple"] {
+  --accent: #7c3aed;
+  --accent-foreground: #d7aeff;
+}
+
+[data-theme="green"] {
+  --accent: #10b981;
+  --accent-foreground: #ffffff;
+}
+
+[data-theme="orange"] {
+  --accent: #f97316;
+  --accent-foreground: #ffffff;
+}
+
+[data-theme="blue"] {
+  --accent: #3b82f6;
+  --accent-foreground: #ffffff;
+}
+
+[data-theme="rose"] {
+  --accent: #f43f5e;
+  --accent-foreground: #ffffff;
+}
+
 .dark {
   --background: oklch(0.145 0 0);
   --foreground: oklch(0.985 0 0);
