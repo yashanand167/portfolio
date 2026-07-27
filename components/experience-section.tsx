@@ -97,7 +97,7 @@ function Company1() {
     <article className="w-full">
       <div className="flex items-start gap-3">
         <div className="rounded-xl bg-gradient-to-b from-white via-neutral-300 to-neutral-600 p-[2px] shadow-md">
-          <div className="rounded-[10px] bg-black p-2">
+          <div className="rounded-[15px] bg-black p-2">
             <Image
               src="/Dseide.png"
               alt="Dseide"
@@ -147,7 +147,7 @@ export default function Experience() {
   return (
     <div className="flex w-full flex-col items-start gap-4">
       <div className="flex items-center gap-2">
-        <ExperienceIcon />
+        {/* <ExperienceIcon /> */}
         <h2 className="font-serif text-2xl font-medium sm:text-xl lg:text-xl">
           Experience
         </h2>

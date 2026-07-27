@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { AnimatePresence, motion } from "motion/react";
+import { useState } from "react";
 
 export default function Header() {
   return (
@@ -30,8 +32,9 @@ export default function Header() {
           </li>
         </ul>
       </div>
-      
-
+      <button className="bg-black text-white px-3 py-2 rounded-md text-sm font-medium">
+        Resume
+      </button>
     </header>
   );
 }
