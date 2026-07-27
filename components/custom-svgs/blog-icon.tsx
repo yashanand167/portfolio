@@ -7,7 +7,7 @@ type BlogIconProps = {
 export default function BlogIcon({ className }: BlogIconProps) {
   return (
     <svg
-      viewBox="0 0 129 118"
+      viewBox="0 0 129 106"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
@@ -46,13 +46,13 @@ export default function BlogIcon({ className }: BlogIconProps) {
 <rect x="36" y="55" width="60" height="1" rx="0.5" fill="#878787"/>
 <rect x="36" y="59" width="39" height="1" rx="0.5" fill="#878787"/>
 <rect x="36" y="63" width="60" height="1" rx="0.5" fill="#878787"/>
-<path d="M19.9523 112.067L4.59386 75.067C2.40706 69.7988 6.27856 64 11.9826 64H118.228C123.593 64 127.437 69.1763 125.887 74.312L114.717 111.312C113.698 114.689 110.586 117 107.059 117H27.3411C24.1076 117 21.192 115.053 19.9523 112.067Z" fill="url(#paint1_linear_130_89)" stroke="white"/>
+<path d="M19.9523 100.067L4.59386 75.067C2.40706 69.7988 6.27856 64 11.9826 64H118.228C123.593 64 127.437 69.1763 125.887 74.312L114.717 99.312C113.698 102.689 110.586 105 107.059 105H27.3411C24.1076 105 21.192 103.053 19.9523 100.067Z" fill="url(#paint1_linear_130_89)" stroke="white"/>
 <defs>
 <linearGradient id="paint0_linear_130_89" x1="66" y1="6" x2="66" y2="76" gradientUnits="userSpaceOnUse">
 <stop stopColor="white"/>
 <stop offset="1" stopColor="white"/>
 </linearGradient>
-<linearGradient id="paint1_linear_130_89" x1="70" y1="117" x2="70" y2="54.4149" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint1_linear_130_89" x1="70" y1="105" x2="70" y2="64" gradientUnits="userSpaceOnUse">
 <stop stopColor="#FFC800"/>
 <stop offset="0.410914" stopColor="#FFDA76"/>
 <stop offset="1" stopColor="#FFFBEF"/>
