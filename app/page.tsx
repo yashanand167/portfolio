@@ -1,7 +1,9 @@
 import Header from "@/components/header";
+import GitHubContributionsSection from "@/components/github-contributions-section";
 import TechStack from "@/components/tech-stack";
 import Image from "next/image";
 import Separator from "@/components/separator";
+import ExperienceSection from "@/components/experience-section";
 
 export default function Home() {
   return (
@@ -19,6 +21,7 @@ export default function Home() {
                   alt="Profile"
                   width={56}
                   height={56}
+                  loading="lazy"
                   className="h-full w-full object-cover"
                 />
               </span>
@@ -31,6 +34,13 @@ export default function Home() {
           </p>
           <TechStack />
           <Separator />
+          <div className="mt-8 w-full overflow-x-auto">
+            <GitHubContributionsSection />
+          </div>
+          <Separator />
+        </section>
+        <section>
+          <ExperienceSection />
         </section>
       </main>
 

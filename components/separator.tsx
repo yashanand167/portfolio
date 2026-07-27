@@ -1,14 +1,9 @@
 export default function Separator() {
-    return (
-    <div className="my-8 h-1 w-full"
-    style={{
-        backgroundImage:
-          "radial-gradient(circle, hsl(var(--border)) 2px, transparent 2px)",
-        backgroundSize: "12px 4px",
-        backgroundRepeat: "repeat-x",
-        backgroundPosition: "center",
-      }}>
-              <h1 className="font-serif">Hello</h1>
-    </div>
-    )
-  }
+  return (
+    <div
+      role="separator"
+      aria-hidden="true"
+      className="my-8 h-1 w-full bg-[radial-gradient(circle,var(--border)_2px,transparent_2px)] bg-size-[12px_100%] bg-repeat-x bg-position-[center]"
+    />
+  );
+}

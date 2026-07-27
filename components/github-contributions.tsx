@@ -8,6 +8,7 @@ import { Spinner } from "@/components/ui/spinner"
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip"
 import type { Activity } from "@/components/contribution-graph"
@@ -32,13 +33,14 @@ export function GitHubContributions({
   const data = use(contributions)
 
   return (
-    <ContributionGraph
-      className={cn("mx-auto py-2", className)}
-      data={data}
-      blockSize={11}
-      blockMargin={3}
-      blockRadius={2}
-    >
+    <TooltipProvider>
+      <ContributionGraph
+        className={cn("mx-auto py-2", className)}
+        data={data}
+        blockSize={11}
+        blockMargin={3}
+        blockRadius={2}
+      >
       <ContributionGraphCalendar
         className="no-scrollbar px-2"
         title="GitHub Contributions"
@@ -81,6 +83,7 @@ export function GitHubContributions({
         <ContributionGraphLegend />
       </ContributionGraphFooter>
     </ContributionGraph>
+    </TooltipProvider>
   )
 }
 

@@ -27,6 +27,7 @@ export default function BlogsPage() {
 
           <BlogsSection posts={posts} />
         </div>
+        
       </main>
     </div>
   );

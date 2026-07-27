@@ -8,7 +8,17 @@ type BlogPostContentProps = {
 export default function BlogPostContent({ content }: BlogPostContentProps) {
   return (
     <div className="blog-content">
-      <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          img: ({ alt, ...props }) => (
+            // eslint-disable-next-line @next/next/no-img-element
+            <img {...props} alt={alt ?? ""} loading="lazy" decoding="async" />
+          ),
+        }}
+      >
+        {content}
+      </ReactMarkdown>
     </div>
   );
 }
