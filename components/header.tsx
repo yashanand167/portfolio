@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
-import ThemeToggle from "@/components/theme-toggle";
+import Link from "next/link";
 
 export default function Header() {
   return (
@@ -15,13 +14,18 @@ export default function Header() {
           <li className="cursor-pointer transition-colors hover:text-muted-foreground">
             Work
           </li>
-          <li className="cursor-pointer transition-colors hover:text-muted-foreground">
-            Blogs
+          <li>
+            <Link
+              href="/blogs"
+              className="transition-colors hover:text-muted-foreground"
+            >
+              Blogs
+            </Link>
           </li>
         </ul>
       </div>
+      
 
-      {/* <ThemeToggle /> */}
     </header>
   );
 }

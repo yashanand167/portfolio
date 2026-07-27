@@ -162,3 +162,66 @@ body {
 @utility link-underline {
     @apply underline decoration-current/30 decoration-1 underline-offset-3 transition-colors hover:decoration-current;
 }
+
+@layer components {
+  .blog-content {
+    @apply text-base leading-relaxed text-foreground;
+  }
+
+  .blog-content > * + * {
+    @apply mt-4;
+  }
+
+  .blog-content h2 {
+    @apply mt-10 font-serif text-2xl font-medium text-foreground;
+  }
+
+  .blog-content h3 {
+    @apply mt-8 font-serif text-xl font-medium text-foreground;
+  }
+
+  .blog-content p {
+    @apply text-muted-foreground;
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+    @apply ml-6 text-muted-foreground;
+  }
+
+  .blog-content ul {
+    @apply list-disc;
+  }
+
+  .blog-content ol {
+    @apply list-decimal;
+  }
+
+  .blog-content li + li {
+    @apply mt-2;
+  }
+
+  .blog-content a {
+    @apply link-underline text-foreground;
+  }
+
+  .blog-content strong {
+    @apply font-medium text-foreground;
+  }
+
+  .blog-content blockquote {
+    @apply border-l-2 border-border pl-4 italic text-muted-foreground;
+  }
+
+  .blog-content code {
+    @apply rounded-md bg-muted px-1.5 py-0.5 font-mono text-sm text-foreground;
+  }
+
+  .blog-content pre {
+    @apply overflow-x-auto rounded-xl border border-border bg-muted p-4;
+  }
+
+  .blog-content pre code {
+    @apply bg-transparent p-0;
+  }
+}
