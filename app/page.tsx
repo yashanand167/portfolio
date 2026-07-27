@@ -1,6 +1,7 @@
 import Header from "@/components/header";
 import TechStack from "@/components/tech-stack";
 import Image from "next/image";
+import Separator from "@/components/separator";
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
         <section className="mt-10 w-full">
           <h1 className="text-2xl font-medium sm:text-2xl lg:text-3xl">
             <span className="inline-flex items-center gap-2">
-              <span>Hi, I am</span>
+              <span className="font-serif font-bold">Hey, I am</span>
               <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
                 <Image
                   src="/Profile.png"
@@ -21,7 +22,7 @@ export default function Home() {
                   className="h-full w-full object-cover"
                 />
               </span>
-              <span>Yash Anand</span>
+              <span className="font-serif font-bold">Yash Anand</span>
             </span>
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
@@ -29,8 +30,10 @@ export default function Home() {
             applications with modern technologies and minimalistic design.
           </p>
           <TechStack />
+          <Separator />
         </section>
       </main>
+
     </div>
   );
 }
