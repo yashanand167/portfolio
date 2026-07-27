@@ -1,6 +1,7 @@
 import { format } from "date-fns";
 
 import BlogPostContent from "@/components/blog-post-content";
+import Signature from "@/components/custom-svgs/signature";
 import type { BlogPost } from "@/lib/blogs/types";
 
 type BlogArticleProps = {
@@ -28,6 +29,13 @@ export default function BlogArticle({ post }: BlogArticleProps) {
       <div className="mt-10 border-t border-border pt-10">
         <BlogPostContent content={post.content} />
       </div>
+
+      {post.category === "personal" ? (
+        <footer className="mt-12 flex flex-col items-start gap-2 border-t border-border pt-8">
+          <p className="text-sm text-muted-foreground">Written by Yash Anand</p>
+          <Signature />
+        </footer>
+      ) : null}
     </article>
   );
 }
