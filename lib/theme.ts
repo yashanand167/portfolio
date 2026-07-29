@@ -2,7 +2,7 @@ export const themes = [
   {
     id: "default",
     label: "Default",
-    color: "#171717",
+    color: "#ffffff",
   },
   {
     id: "purple",
