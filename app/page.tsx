@@ -43,7 +43,6 @@ export default function Home() {
           <ExperienceSection />
         </section>
       </main>
-
     </div>
   );
 }

@@ -16,36 +16,9 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  const switchTheme = () => {
-    setTheme(resolvedTheme === "dark" ? "light" : "dark");
-  };
-
-  const handleThemeToggleClick = () => {
-    click();
-
-    if (!document.startViewTransition) {
-      switchTheme();
-      return;
-    }
-
-    document.startViewTransition(switchTheme);
-  };
-
   return (
-    <Button
-      variant="outline"
-      size="icon"
-      aria-label="Toggle theme"
-      onClick={handleThemeToggleClick}
-    >
-      {mounted ? (
-        <>
-          <MoonIcon className="hidden [html.dark_&]:block" />
-          <SunMediumIcon className="hidden [html.light_&]:block" />
-        </>
-      ) : (
-        <span className="size-4" aria-hidden />
-      )}
-    </Button>
+    <div className="p-5 ">
+
+    </div>
   );
 }

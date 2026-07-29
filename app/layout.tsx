@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
+import Script from "next/script";
 
-import { ThemeProvider } from "@/components/theme-provider";
+import { ThemeProvider } from "@/context/theme-provider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -37,7 +38,10 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} ${instrumentSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <Script id="color-theme-init" strategy="beforeInteractive">
+          {`(function(){try{var t=localStorage.getItem("color-theme");if(t&&t!=="default")document.documentElement.dataset.theme=t}catch(e){}})();`}
+        </Script>
+        <ThemeProvider>
           {children}
         </ThemeProvider>
       </body>
