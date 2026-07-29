@@ -41,6 +41,7 @@ export default function Home() {
         </section>
         <section>
           <ExperienceSection />
+          <Separator />
         </section>
       </main>
     </div>

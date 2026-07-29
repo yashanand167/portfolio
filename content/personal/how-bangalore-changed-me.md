@@ -1,5 +1,5 @@
 ---
-title: How Bangalore Changed Me
+title: The City That Changed Me
 description: Notes on moving to a city that refuses to stay still.
 date: 2026-07-26
 category: personal
@@ -49,17 +49,19 @@ High school was one of the hardest periods of my life.
 
 It slowly chipped away at my confidence and made me question myself more than I should have.
 
+I faced more unfairness than I knew how to deal with. Constant remarks, exclusion, and being singled out became part of everyday life. For the most part, I chose silence.
+
 By the time it ended, I made one decision that changed everything.
 
-I walked away from people who no longer belonged in my future.
+I decided to cut ties with people who no longer had a place in my life I want to build. This included a lot of people who knew me, a lot of contacts
 
 Not out of anger.
 
 Not out of revenge.
 
-Simply because I realized some relationships only keep you attached to a version of yourself you're trying to outgrow.
+Simply because I realised that moving forward sometimes means leaving behind the people who keep you anchored to your past.
 
-I've never regretted that decision.
+I've never regretted that decision, not even once to this day.
 
 Sometimes growth begins with letting go.
 
@@ -75,9 +77,15 @@ Go back home.
 
 Instead, Bangalore became home.
 
-In almost four years, I only visited my family twice. It wasn't easy, but every time I returned, this city felt familiar in a way I never expected.
+In almost four years, I only got to visit my family twice. It wasn't easy, but every time I returned, this city felt familiar in a way I never expected.
 
 More importantly, it changed how I think.
+
+For the first time, I gave myself permission to explore without worrying about the outcome. I immersed myself in design, frontend development, AI, and anything that sparked my curiosity. 
+
+I wasn’t chasing titles or quick results I was simply learning because I genuinely enjoyed the process.
+
+Looking back, that curiosity shaped me far more than any plan I had when I first arrived.
 
 Here, ambition feels normal.
 
@@ -95,11 +103,17 @@ Somewhere between college, side projects, countless late nights, and too many cu
 
 This city taught me that comfort zones quietly limit your potential.
 
-It taught me that failure isn't something to fear—it's proof you were willing to try.
+It taught me that failure isn't something to fear it's proof you were willing to try.
 
 It taught me that not every relationship is meant to last.
 
 And most importantly, it taught me that the people around you shape the size of your ambitions.
+
+I met friends who genuinely wanted to see me grow. They encouraged me, challenged me, and helped me become a better person.
+
+Not everyone I met had the same mindset. Some were always comparing, competing, or trying to prove they were somehow better whether through **appearance**, skills, or achievements. Over time, I learned to recognize that behavior and not let it define my own path.
+
+This time, though, I didn’t let it affect me. Instead of seeking validation, I focused on the people who inspired me to grow.
 
 ## What's Ahead
 
@@ -113,7 +127,7 @@ I want to build relentlessly, keep learning, explore the world, and become the b
 
 That means making a few sacrifices.
 
-No **relationships**.
+No **relationships** or **love life**.
 
 No chasing comfort.
 
