@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 
-import ExperienceIcon from "./custom-svgs/experience-icon";
 import { cn } from "@/lib/utils";
 
 type ExperiencePart = {
@@ -58,6 +57,37 @@ const COMPANY_1_PARTS: ExperiencePart[] = [
   },
 ];
 
+const FREELANCE_PARTS: ExperiencePart[] = [
+  {
+    title: "Discovery & research",
+    description:
+      "Kicked off the AI-powered nutrition app with user research and competitor analysis to map audience needs, market gaps, and product opportunities.",
+    focus: ["Product Design", "User Research"],
+    stack: ["Figma", "Notion", "Miro"],
+  },
+  {
+    title: "User flows & design system",
+    description:
+      "Mapped core journeys across onboarding, meal tracking, and recommendations, then built a scalable design system to keep the product consistent.",
+    focus: ["Product Design", "Design Systems"],
+    stack: ["Figma"],
+  },
+  {
+    title: "UI design & feedback loops",
+    description:
+      "Designed polished product screens and ran tight feedback loops with stakeholders to refine layouts, hierarchy, and interaction details.",
+    focus: ["Product Design", "UI/UX"],
+    stack: ["Figma", "Framer"],
+  },
+  {
+    title: "Design delivery",
+    description:
+      "Packaged final flows, components, and specs for handoff so the product team could move confidently into build.",
+    focus: ["Product Design"],
+    stack: ["Figma"],
+  },
+];
+
 function StackPills({ items }: { items: string[] }) {
   return (
     <ul className="mt-3 flex flex-wrap gap-1.5">
@@ -88,32 +118,44 @@ function ExperiencePartCard({ part }: { part: ExperiencePart }) {
   );
 }
 
-function Company1() {
+function ExperienceLogo({ children }: { children: ReactNode }) {
+  return (
+    <div className="rounded-xl bg-gradient-to-b from-white via-neutral-300 to-neutral-600 p-[2px] shadow-md">
+      <div className="flex h-[56px] w-[56px] items-center justify-center rounded-[15px] bg-black p-2">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function ExperienceEntry({
+  logo,
+  name,
+  role,
+  subtitle,
+  parts,
+}: {
+  logo: ReactNode;
+  name: string;
+  role: string;
+  subtitle?: string;
+  parts: ExperiencePart[];
+}) {
   const [expanded, setExpanded] = useState(false);
-  const visibleParts = COMPANY_1_PARTS.slice(0, 2);
-  const hiddenParts = COMPANY_1_PARTS.slice(2);
+  const visibleParts = parts.slice(0, 2);
+  const hiddenParts = parts.slice(2);
 
   return (
     <article className="w-full">
       <div className="flex items-start gap-3">
-        <div className="rounded-xl bg-gradient-to-b from-white via-neutral-300 to-neutral-600 p-[2px] shadow-md">
-          <div className="rounded-[15px] bg-black p-2">
-            <Image
-              src="/Dseide.png"
-              alt="Dseide"
-              width={40}
-              height={40}
-              loading="lazy"
-              className="rounded-md object-contain"
-            />
-          </div>
-        </div>
+        <ExperienceLogo>{logo}</ExperienceLogo>
 
         <div className="min-w-0 flex-1">
-          <h3 className="text-base font-medium text-foreground">Dseide</h3>
-          <p className="text-sm text-muted-foreground">
-            Product Design & Frontend Development
-          </p>
+          <h3 className="text-base font-medium text-foreground">{name}</h3>
+          <p className="text-sm text-muted-foreground">{role}</p>
+          {subtitle ? (
+            <p className="mt-0.5 text-sm text-muted-foreground">{subtitle}</p>
+          ) : null}
         </div>
       </div>
 
@@ -129,38 +171,53 @@ function Company1() {
           : null}
       </ul>
 
-      <button
-        type="button"
-        onClick={() => setExpanded((value) => !value)}
-        className={cn(
-          "mt-4 text-sm font-medium text-foreground transition-colors hover:text-muted-foreground",
-        )}
-        aria-expanded={expanded}
-      >
-        {expanded ? "Show less" : "Read more"}
-      </button>
+      {hiddenParts.length > 0 ? (
+        <button
+          type="button"
+          onClick={() => setExpanded((value) => !value)}
+          className={cn(
+            "mt-4 text-sm font-medium text-foreground transition-colors hover:text-muted-foreground",
+          )}
+          aria-expanded={expanded}
+        >
+          {expanded ? "Show less" : "Read more"}
+        </button>
+      ) : null}
     </article>
   );
 }
 
-function Company2() {
+function Company1() {
   return (
-    <article className="w-full">
-      <div className="flex items-start gap-3">
-        <div className="rounded-xl bg-gradient-to-b from-white via-neutral-300 to-neutral-600 p-[2px] shadow-md">
-          <div className="rounded-[15px] bg-black p-2">
-            <Image
-              src="/Dseide.png"
-              alt="Dseide"
-              width={40}
-              height={40}
-              loading="lazy"
-              className="rounded-md object-contain"
-            />
-          </div>
-        </div>
-      </div>
-    </article>
+    <ExperienceEntry
+      name="Dseide"
+      role="Product Design & Frontend Development · Aug 2025 – May 2026"
+      parts={COMPANY_1_PARTS}
+      logo={
+        <Image
+          src="/Dseide.png"
+          alt="Dseide"
+          width={40}
+          height={40}
+          loading="lazy"
+          className="rounded-md object-contain"
+        />
+      }
+    />
+  );
+}
+
+function Freelance() {
+  return (
+    <ExperienceEntry
+      name="Freelance"
+      role="Product Designer · Feb 2025 – May 2025"
+      subtitle="AI-powered nutrition app"
+      parts={FREELANCE_PARTS}
+      logo={
+        <span className="font-serif text-lg font-medium text-white">F</span>
+      }
+    />
   );
 }
 
@@ -168,13 +225,15 @@ export default function Experience() {
   return (
     <div className="flex w-full flex-col items-start gap-4">
       <div className="flex items-center gap-2">
-        {/* <ExperienceIcon /> */}
         <h2 className="font-serif text-2xl font-medium sm:text-xl lg:text-xl">
           Work Experience so far
         </h2>
       </div>
 
-      <Company1 />
+      <div className="flex w-full flex-col gap-10">
+        <Company1 />
+        <Freelance />
+      </div>
     </div>
   );
 }

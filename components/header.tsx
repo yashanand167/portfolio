@@ -35,29 +35,17 @@ export default function Header() {
         </ul>
       </div>
       <motion.button
-
       layout
-
       onHoverStart={() => setHovered(true)}
-
       onHoverEnd={() => setHovered(false)}
-
       transition={{
-
         type: "spring",
-
         stiffness: 400,
-
         damping: 30,
-
       }}
-
       className="flex h-10 items-center rounded-md bg-black px-3 text-sm font-medium text-white"
-
     >
-
       <span>Resume</span>
-
       <AnimatePresence mode="wait">
         {hovered && (
           <motion.div
