@@ -21,9 +21,12 @@ export default function Header() {
           />
         </div>
         <ul className="flex flex-row gap-4 text-base font-medium text-foreground">
-          <li className="cursor-pointer transition-colors hover:text-muted-foreground">
-            Work
-          </li>
+        <Link
+              href="/works"
+              className="transition-colors hover:text-muted-foreground"
+            >
+              Works
+            </Link>
           <li>
             <Link
               href="/blogs"
@@ -43,7 +46,7 @@ export default function Header() {
         stiffness: 400,
         damping: 30,
       }}
-      className="flex h-10 items-center rounded-md bg-black px-3 text-sm font-medium text-white"
+      className="flex h-10 items-center rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground transition-colors duration-300"
     >
       <span>Resume</span>
       <AnimatePresence mode="wait">
