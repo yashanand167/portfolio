@@ -132,13 +132,13 @@ function ExperienceEntry({
   logo,
   name,
   role,
-  subtitle,
+  period,
   parts,
 }: {
   logo: ReactNode;
   name: string;
   role: string;
-  subtitle?: string;
+  period: string;
   parts: ExperiencePart[];
 }) {
   const [expanded, setExpanded] = useState(false);
@@ -153,9 +153,7 @@ function ExperienceEntry({
         <div className="min-w-0 flex-1">
           <h3 className="text-base font-medium text-foreground">{name}</h3>
           <p className="text-sm text-muted-foreground">{role}</p>
-          {subtitle ? (
-            <p className="mt-0.5 text-sm text-muted-foreground">{subtitle}</p>
-          ) : null}
+          <p className="mt-0.5 text-xs text-muted-foreground">{period}</p>
         </div>
       </div>
 
@@ -191,7 +189,8 @@ function Company1() {
   return (
     <ExperienceEntry
       name="Dseide"
-      role="Product Design & Frontend Development · Aug 2025 – May 2026"
+      role="Product Design & Frontend Development"
+      period="Aug 2025 – May 2026"
       parts={COMPANY_1_PARTS}
       logo={
         <Image
@@ -211,8 +210,8 @@ function Freelance() {
   return (
     <ExperienceEntry
       name="Freelance"
-      role="Product Designer · Feb 2025 – May 2025"
-      subtitle="AI-powered nutrition app"
+      role="Product Designer"
+      period="Feb 2025 – May 2025"
       parts={FREELANCE_PARTS}
       logo={
         <span className="font-serif text-lg font-medium text-white">F</span>

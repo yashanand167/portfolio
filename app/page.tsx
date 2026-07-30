@@ -4,6 +4,7 @@ import TechStack from "@/components/tech-stack";
 import Image from "next/image";
 import Separator from "@/components/separator";
 import ExperienceSection from "@/components/experience-section";
+import ProfileAvatar from "@/components/profile-avatar";
 
 export default function Home() {
   return (
@@ -15,16 +16,7 @@ export default function Home() {
           <h1 className="text-2xl font-medium sm:text-2xl lg:text-3xl">
             <span className="inline-flex items-center gap-2">
               <span className="font-serif font-bold">Hey, I am</span>
-              <span className="inline-flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
-                <Image
-                  src="/Profile.png"
-                  alt="Profile"
-                  width={56}
-                  height={56}
-                  loading="lazy"
-                  className="h-full w-full object-cover"
-                />
-              </span>
+              <ProfileAvatar />
               <span className="font-serif font-bold">Yash Anand</span>
             </span>
           </h1>
