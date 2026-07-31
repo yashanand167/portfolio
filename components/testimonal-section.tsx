@@ -4,10 +4,10 @@ import { TbBrandLinkedin } from "react-icons/tb";
 import { cn } from "@/lib/utils";
 
 const horizontalRuleClassName =
-  "pointer-events-none h-0.5 bg-[repeating-linear-gradient(to_right,var(--border)_0_5px,transparent_5px_10px)]";
+  "pointer-events-none z-10 h-0.5 bg-[repeating-linear-gradient(to_right,var(--border)_0_5px,transparent_5px_10px)]";
 
 const verticalRuleClassName =
-  "pointer-events-none w-0.5 bg-[repeating-linear-gradient(to_bottom,var(--border)_0_5px,transparent_5px_10px)]";
+  "pointer-events-none z-10 w-0.5 bg-[repeating-linear-gradient(to_bottom,var(--border)_0_5px,transparent_5px_10px)]";
 
 type Testimonial = {
   name: string;

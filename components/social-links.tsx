@@ -35,7 +35,7 @@ function SocialLinkBadge({ href, icon: Icon }: SocialLink) {
       href={href}
       target={isExternal ? "_blank" : undefined}
       rel={isExternal ? "noopener noreferrer" : undefined}
-      className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted p-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-primary"
+      className="inline-flex items-center gap-2 rounded-md border border-border bg-muted p-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-primary"
     >
       <Icon className="size-4 shrink-0" aria-hidden />
     </a>

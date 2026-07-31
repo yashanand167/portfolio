@@ -68,9 +68,12 @@ const techStack: TechItem[] = [
 
 function TechBadge({ name, icon: Icon, color, useForeground }: TechItem) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-lg border border-border bg-muted px-3 py-2 text-sm font-medium text-foreground">
+    <span className="inline-flex items-center gap-1.5 rounded-md border border-border bg-muted px-2 py-1 text-xs font-medium text-foreground sm:gap-2 sm:rounded-lg sm:px-3 sm:py-2 sm:text-sm">
       <Icon
-        className={cn("size-4 shrink-0", useForeground && "text-foreground")}
+        className={cn(
+          "size-3 shrink-0 sm:size-4",
+          useForeground && "text-foreground",
+        )}
         style={color ? { color } : undefined}
         aria-hidden
       />
@@ -85,7 +88,7 @@ export default function TechStack() {
       <p className="text-muted-foreground">
         Stacks & skills I make use of to craft beautiful web and mobile products
       </p>
-      <div className="mt-3 flex flex-wrap gap-2">
+      <div className="mt-3 flex flex-wrap gap-1.5 sm:gap-2">
         {techStack.map((tech) => (
           <TechBadge key={tech.name} {...tech} />
         ))}
