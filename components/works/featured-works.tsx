@@ -44,28 +44,29 @@ function FeaturedWorkCard({
   links,
 }: FeaturedWork) {
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card">
-      <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-border bg-muted">
+    <article className="group flex flex-col overflow-hidden rounded-2xl border border-border bg-card p-3 shadow-sm sm:p-4">
+      <div className="relative aspect-[4/3] w-full shrink-0 overflow-hidden rounded-xl bg-muted">
         <Image
           src={image}
           alt={title}
           fill
           loading="lazy"
+          sizes="(max-width: 640px) 100vw, 50vw"
           className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
         />
       </div>
 
-      <div className="flex flex-1 flex-col p-5">
-        <h3 className="text-base font-medium text-foreground">{title}</h3>
+      <div className="flex shrink-0 flex-col pt-3 sm:pt-4">
+        <h3 className="text-sm font-medium text-foreground">{title}</h3>
         {subtitle ? (
-          <p className="mt-1 text-sm text-muted-foreground">{subtitle}</p>
+          <p className="mt-1 text-xs text-muted-foreground">{subtitle}</p>
         ) : null}
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+        <p className="mt-2 line-clamp-2 text-xs leading-relaxed text-muted-foreground">
           {description}
         </p>
 
         {links.length > 0 ? (
-          <div className="mt-4 flex flex-wrap gap-2">
+          <div className="mt-3 flex flex-wrap gap-2">
             {links.map((link) => (
               <a
                 key={link}
@@ -87,12 +88,10 @@ function FeaturedWorkCard({
 
 export default function FeaturedWorks() {
   return (
-    <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2 px-4 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {featuredWorks.map((work) => (
-          <FeaturedWorkCard key={work.title} {...work} />
-        ))}
-      </div>
+    <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
+      {featuredWorks.map((work) => (
+        <FeaturedWorkCard key={work.title} {...work} />
+      ))}
     </div>
   );
 }

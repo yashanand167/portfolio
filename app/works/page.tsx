@@ -14,7 +14,7 @@ export default function WorksPage() {
           <FeaturedWorks />
         </section>
 
-        <section>
+        <section className="mt-10">
           <h2 className="text-xl font-medium font-serif">Some of my Side Projects</h2>
           <p>Projects I have worked and been working on in my free time</p>
         </section>

@@ -23,7 +23,7 @@ export default function Home() {
             </span>
           </h1>
           <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            A design-focused software engineer building rich and sleek web
+            Design engineer building rich and sleek web
             applications with modern technologies and minimalistic design.
           </p>
           <TechStack />
