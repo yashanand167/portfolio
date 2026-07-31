@@ -1,6 +1,8 @@
 import Link from "next/link";
 import Inspirations from "@/components/inspirations";
 import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Separator from "@/components/separator";
 
 export default function InspirationsPage() {
   return (
@@ -17,7 +19,12 @@ export default function InspirationsPage() {
         </section>
 
         <Inspirations />
+        <section className="mt-10">
+      <Separator />
+      <Footer />
+      </section>
       </main>
+      
     </div>
   );
 }

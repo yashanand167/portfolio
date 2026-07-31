@@ -7,6 +7,7 @@ import ExperienceSection from "@/components/experience-section";
 import ProfileAvatar from "@/components/profile-avatar";
 import SocialLinks from "@/components/social-links";
 import TestimonialSection from "@/components/testimonal-section";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -41,6 +42,9 @@ export default function Home() {
         </section>
         <section>
           <TestimonialSection />
+        </section>
+        <section className="mt-10">
+          <Footer />
         </section>
       </main>
     </div>
