@@ -14,7 +14,7 @@ const featuredWorks: FeaturedWork[] = [
   {
     title: "Dseide",
     subtitle: "Cross platform development and product design",
-    description: "Description 1",
+    description: "Contributed Heavily in the app design part and cross platform development in React Native.",
     image: "/Dseide.png",
     links: ["https://dseide.com"],
   },
@@ -23,14 +23,14 @@ const featuredWorks: FeaturedWork[] = [
     subtitle: "Landing page design & development",
     description:
       "Landing page design and development with high fidelity motion animations.",
-    image: "/Profile.png",
-    links: ["https://www.google.com"],
+    image: "/MailGauge.png",
+    links: ["https://get.mailgauge.app/"],
   },
   {
     title: "AI Nutrition App",
     subtitle: "Product design",
     description: "Product design of a cross-platform mobile application.",
-    image: "/Me.png",
+    image: "/Nutrition.png",
     links: ["https://www.google.com"],
   },
 ];

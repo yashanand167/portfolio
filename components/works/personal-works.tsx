@@ -13,9 +13,9 @@ type PersonalWork = {
 const personalWorks: PersonalWork[] = [
   {
     title: "Personal Lab",
-    subtitle: "A collection of my personal crafted UI components",
-    description: "Description 1",
-    image: "/Profile.png",
+    subtitle: "Experimental",
+    description: "A collection of my personal crafted UI components",
+    image: "/Logo.png",
     links: ["https://www.google.com"],
   },
   {
@@ -23,7 +23,7 @@ const personalWorks: PersonalWork[] = [
     subtitle: "Design principles in web interfaces",
     description:
       "An exploration of Apple's design principles, translated into responsive web interfaces.",
-    image: "/Me.png",
+    image: "/Apple.png",
     links: ["https://www.google.com"],
   },
   {
@@ -31,7 +31,7 @@ const personalWorks: PersonalWork[] = [
     subtitle: "AI-powered survey platform",
     description:
       "An AI powered survey platform for collecting user feedback and creating a survey with AI features.",
-    image: "/Dseide.png",
+    image: "/AskNow.png",
     links: ["https://www.google.com"],
   },
   {
@@ -39,7 +39,7 @@ const personalWorks: PersonalWork[] = [
     subtitle: "Personal design handbook",
     description:
       "Crafting my own personal handbook on web on using AI in product design with importance of user research and design systems.",
-    image: "/Profile.png",
+    image: "/Handbook.png",
     links: ["https://www.google.com"],
   },
 ];
