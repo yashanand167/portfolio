@@ -8,6 +8,7 @@ import { Download } from "lucide-react";
 import { useEffect, useState } from "react";
 
 import BlogIcon from "@/components/custom-svgs/blog-icon";
+import GalleryIcon from "@/components/custom-svgs/gallery-icon";
 import InspirationIcon from "@/components/custom-svgs/inspiration-icon";
 import WorkIcon from "@/components/custom-svgs/work-icon";
 import { cn } from "@/lib/utils";
@@ -40,6 +41,12 @@ const navItems: {
     label: "Inspirations",
     hoverLabel: "People & Ideas",
     Icon: InspirationIcon,
+  },
+  {
+    href: "/gallery",
+    label: "Gallery",
+    hoverLabel: "Snapshots & frames",
+    Icon: GalleryIcon,
   },
 ];
 
@@ -152,7 +159,7 @@ export default function Header() {
           stiffness: 400,
           damping: 30,
         }}
-        className="flex h-8 shrink-0 items-center rounded-md bg-primary px-2.5 text-xs font-medium text-primary-foreground transition-colors duration-300 sm:h-10 sm:px-3 sm:text-sm"
+        className="flex h-8 border border-white shrink-0 items-center rounded-md bg-primary px-2.5 text-xs font-medium text-primary-foreground transition-colors duration-300 sm:h-10 sm:px-3 sm:text-sm"
       >
         <span>Resume</span>
         <AnimatePresence mode="wait">
