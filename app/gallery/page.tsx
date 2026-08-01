@@ -1,5 +1,5 @@
+import Artworks from "@/components/artworks";
 import Header from "@/components/header";
-import Gallery from "@/components/gallery";
 import PageMain from "@/components/page-main";
 
 export const metadata = {
@@ -18,9 +18,11 @@ export default function GalleryPage() {
           <p className="page-lead mt-2">
             Beyond Design and Engineering, I enjoy creating arts
           </p>
-          <Gallery />
         </section>
+        <Artworks />
       </PageMain>
     </div>
   );
 }
+
+
