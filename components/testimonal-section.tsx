@@ -14,57 +14,57 @@ type Testimonial = {
   profession: string;
   image: string;
   description: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
 };
 
 const testimonials: Testimonial[] = [
   {
-    name: "Aarav Mehta",
-    profession: "Product Manager, Dseide",
-    image: "/Profile.png",
+    name: "Nikhila CR",
+    profession: "CEO, Dseide",
+    image: "/Nikhila.png",
     description:
-      "Yash has a rare mix of design taste and engineering rigour. He shipped flows that looked exactly like the mocks, and then improved the mocks once he saw them running.",
-    linkedinUrl: "https://www.linkedin.com/in/aarav-mehta",
+      "Yash brought a level of craft to our product that showed up in every screen. His design sensibility and frontend work made Dseide feel polished and intentional from day one.",
+    linkedinUrl: "https://www.linkedin.com/in/nikhila-c-r-925190197/",
   },
   {
-    name: "Sara Klein",
-    profession: "Founder, Nutriq",
-    image: "/Me.png",
+    name: "Bharath M",
+    profession: "CSO, Dseide",
+    image: "/Bharath.png",
     description:
-      "He took our nutrition app from a vague idea to a complete design system in weeks. The user research he ran reshaped how we thought about onboarding entirely.",
-    linkedinUrl: "https://www.linkedin.com/in/sara-klein",
+      "He doesn't just implement designs — he improves them. Yash's frontend work consistently elevated how our product looked and felt, without slowing down delivery.",
+    linkedinUrl: "https://www.linkedin.com/in/bharath-dseide/",
   },
   {
-    name: "Rohan Iyer",
-    profession: "Senior Frontend Engineer",
-    image: "/Profile.png",
+    name: "Luvkush Sharma",
+    profession: "Product Lead, Dseide",
+    image: "/Luvkush.png",
     description:
-      "Reviewing Yash's pull requests is easy. Components are small, accessible, and named the way you would expect. He genuinely cares about the person reading the code next.",
-    linkedinUrl: "https://www.linkedin.com/in/rohan-iyer",
+      "Working with Yash on product flows was seamless. He translated rough ideas into clean UI, built reusable components, and kept design and engineering aligned throughout.",
+    linkedinUrl: "https://www.linkedin.com/in/luvkushsharma/",
   },
   {
-    name: "Emily Carter",
-    profession: "Design Lead",
-    image: "/Me.png",
+    name: "Sahan Angadi",
+    profession: "Full-Stack Engineer, Dseide",
+    image: "/Sahan.png",
     description:
-      "Yash bridges the gap our team always struggled with. Handoff stopped being a negotiation because he could speak to both the design intent and the implementation cost.",
-    linkedinUrl: "https://www.linkedin.com/in/emily-carter",
+      "Yash's frontend code was always structured and easy to integrate with. He cared about spacing, motion, and edge cases — the details that make interfaces feel finished.",
+    linkedinUrl: "https://www.linkedin.com/in/sahanangadi39/",
   },
   {
-    name: "Daniel Osei",
-    profession: "CTO, Layerbase",
-    image: "/Profile.png",
+    name: "Jotham",
+    profession: "Frontend Engineer, Dseide",
+    image: "/Jotham.png",
     description:
-      "We needed a React Native app that felt native on both platforms. He delivered it, along with motion details nobody asked for but everyone noticed.",
-    linkedinUrl: "https://www.linkedin.com/in/daniel-osei",
+      "As a fellow frontend engineer, I saw how thoughtfully Yash approached components and layout. His design eye showed in every PR — consistent, accessible, and pixel-aware.",
+    linkedinUrl: "https://www.linkedin.com/in/jp69/",
   },
   {
-    name: "Priya Nair",
-    profession: "UX Researcher",
-    image: "/Me.png",
+    name: "Cheluva Nyandeep",
+    profession: "Backend Engineer, Dseide",
+    image: "/Deepu.png",
     description:
-      "He treats feedback as data rather than criticism. Every round of testing came back with thoughtful changes, and he always explained the reasoning behind them.",
-    linkedinUrl: "https://www.linkedin.com/in/priya-nair",
+      "Yash made backend integration feel effortless on the UI side. He designed interfaces that mapped cleanly to our APIs and always pushed for clarity in how data showed up on screen.",
+    linkedinUrl: "https://www.linkedin.com/in/chevula-jnyandeep/",
   },
 ];
 
@@ -111,15 +111,17 @@ function TestimonialCard({
           <p className="truncate text-xs text-muted-foreground">{profession}</p>
         </div>
 
-        <a
-          href={linkedinUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`${name} on LinkedIn`}
-          className="shrink-0 rounded-md p-1 text-muted-foreground transition-colors hover:text-primary"
-        >
-          <TbBrandLinkedin className="size-4" aria-hidden />
-        </a>
+        {linkedinUrl ? (
+          <a
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${name} on LinkedIn`}
+            className="shrink-0 rounded-md p-1 text-muted-foreground transition-colors hover:text-primary"
+          >
+            <TbBrandLinkedin className="size-4" aria-hidden />
+          </a>
+        ) : null}
       </div>
 
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:mt-4 sm:text-sm">

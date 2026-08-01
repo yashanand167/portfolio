@@ -1,6 +1,6 @@
 import type { IconType } from "react-icons";
 import {
-  TbBrandInstagram,
+  TbBrandGithub,
   TbBrandLinkedin,
   TbBrandX,
   TbMail,
@@ -21,9 +21,9 @@ const socialLinks: SocialLink[] = [
   },
   { name: "Email", href: "mailto:yash.anand167@gmail.com", icon: TbMail },
   {
-    name: "Instagram",
-    href: "https://www.instagram.com/yash.anand167",
-    icon: TbBrandInstagram,
+    name: "GitHub",
+    href: "https://github.com/yashanand167",
+    icon: TbBrandGithub,
   },
 ];
 

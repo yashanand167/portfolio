@@ -18,11 +18,11 @@ export default function BlogsSection({ posts }: BlogsSectionProps) {
 
   return (
     <>
-      <div className="flex justify-center sm:col-start-2 sm:row-start-1 sm:row-span-2 sm:justify-end sm:self-start">
+      <div className="mt-4 flex justify-center sm:mt-6">
         <BlogCategoryTabs onChange={setActiveCategory} />
       </div>
 
-      <div className="mt-6 sm:col-span-2">
+      <div className="mt-6">
         <BlogTitleList posts={posts} category={activeCategory} />
       </div>
     </>
