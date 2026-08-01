@@ -5,46 +5,115 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { Download } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
+import BlogIcon from "@/components/custom-svgs/blog-icon";
+import InspirationIcon from "@/components/custom-svgs/inspiration-icon";
+import WorkIcon from "@/components/custom-svgs/work-icon";
 import { cn } from "@/lib/utils";
+import type { ComponentType } from "react";
 
-const navItems = [
-  { href: "/works", label: "Works" },
-  { href: "/blogs", label: "Blogs" },
-  { href: "/inspirations", label: "Inspirations" },
-] as const;
+type NavIconProps = {
+  className?: string;
+};
+
+const navItems: {
+  href: string;
+  label: string;
+  hoverLabel: string;
+  Icon: ComponentType<NavIconProps>;
+}[] = [
+  {
+    href: "/works",
+    label: "Works",
+    hoverLabel: "Things I have built",
+    Icon: WorkIcon,
+  },
+  {
+    href: "/blogs",
+    label: "Blogs",
+    hoverLabel: "Observatory",
+    Icon: BlogIcon,
+  },
+  {
+    href: "/inspirations",
+    label: "Inspirations",
+    hoverLabel: "People & Ideas",
+    Icon: InspirationIcon,
+  },
+];
 
 const activeUnderlineClassName =
   "bg-[radial-gradient(circle,var(--primary)_2px,transparent_2px)] bg-size-[12px_100%] bg-repeat-x bg-position-[center]";
 
-function NavLink({ href, label }: { href: string; label: string }) {
+function NavLink({
+  href,
+  label,
+  hoverLabel,
+  Icon,
+}: {
+  href: string;
+  label: string;
+  hoverLabel: string;
+  Icon: ComponentType<NavIconProps>;
+}) {
   const pathname = usePathname();
+  const [isHovered, setIsHovered] = useState(false);
   const isActive =
     pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
+  useEffect(() => {
+    setIsHovered(false);
+  }, [pathname]);
+
   return (
     <li className="shrink-0">
-      <Link
-        href={href}
-        className={cn(
-          "relative inline-block pb-1.5 transition-colors duration-300",
-          isActive
-            ? "text-primary"
-            : "text-foreground hover:text-muted-foreground",
-        )}
+      <div
+        className="relative inline-flex"
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
-        {label}
-        {isActive ? (
-          <span
-            aria-hidden
-            className={cn(
-              "absolute inset-x-0 -bottom-0.5 h-1",
-              activeUnderlineClassName,
-            )}
-          />
-        ) : null}
-      </Link>
+        <Link
+          href={href}
+          onClick={() => setIsHovered(false)}
+          className={cn(
+            "relative inline-block pb-1.5 transition-colors duration-300",
+            isActive
+              ? "text-primary"
+              : "text-foreground hover:text-muted-foreground",
+          )}
+        >
+          {label}
+          {isActive ? (
+            <span
+              aria-hidden
+              className={cn(
+                "absolute inset-x-0 -bottom-0.5 h-1",
+                activeUnderlineClassName,
+              )}
+            />
+          ) : null}
+        </Link>
+
+        <AnimatePresence>
+          {isHovered ? (
+            <motion.div
+              key="nav-tooltip"
+              initial={{ opacity: 0, y: -8, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -8, scale: 0.95 }}
+              transition={{ duration: 0.18 }}
+              className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-3 -translate-x-1/2"
+            >
+              <div className="flex items-center gap-2 whitespace-nowrap rounded-xl bg-neutral-900 px-3 py-2 text-sm text-white shadow-xl">
+                <Icon className="h-5 w-auto" />
+                <span>{hoverLabel}</span>
+              </div>
+              <div className="absolute -bottom-1 left-1/2 h-2 w-2 -translate-x-1/2 rotate-45 bg-neutral-900" />
+            </motion.div>
+          ) : null}
+        </AnimatePresence>
+      </div>
     </li>
   );
 }

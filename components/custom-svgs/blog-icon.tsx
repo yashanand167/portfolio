@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { motion } from "motion/react";
 
 import { cn } from "@/lib/utils";
@@ -23,6 +24,10 @@ const slideTransition = {
 } as const;
 
 export default function BlogIcon({ className }: BlogIconProps) {
+  const id = useId();
+  const sheetGradientId = `${id}-blog-icon-sheet`;
+  const folderGradientId = `${id}-blog-icon-folder`;
+
   return (
     <svg
       viewBox="0 0 129 106"
@@ -257,7 +262,7 @@ export default function BlogIcon({ className }: BlogIconProps) {
           width="69.5"
           height="69.5"
           rx="5.75"
-          fill="url(#blog_icon_sheet)"
+          fill={`url(#${sheetGradientId})`}
           stroke="#B6B6B6"
           strokeWidth="0.5"
         />
@@ -279,13 +284,13 @@ export default function BlogIcon({ className }: BlogIconProps) {
         transition={{ ...popTransition, delay: 0.04 }}
         style={{ transformOrigin: "66px 84px", transformBox: "fill-box" }}
         d="M19.9523 100.067L4.59386 75.067C2.40706 69.7988 6.27856 64 11.9826 64H118.228C123.593 64 127.437 69.1763 125.887 74.312L114.717 99.312C113.698 102.689 110.586 105 107.059 105H27.3411C24.1076 105 21.192 103.053 19.9523 100.067Z"
-        fill="url(#blog_icon_folder)"
+        fill={`url(#${folderGradientId})`}
         stroke="white"
       />
 
       <defs>
         <linearGradient
-          id="blog_icon_sheet"
+          id={sheetGradientId}
           x1="66"
           y1="6"
           x2="66"
@@ -296,7 +301,7 @@ export default function BlogIcon({ className }: BlogIconProps) {
           <stop offset="1" stopColor="white" />
         </linearGradient>
         <linearGradient
-          id="blog_icon_folder"
+          id={folderGradientId}
           x1="70"
           y1="105"
           x2="70"
