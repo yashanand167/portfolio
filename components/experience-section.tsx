@@ -107,7 +107,7 @@ function ExperiencePartCard({ part }: { part: ExperiencePart }) {
   return (
     <li className="border-t border-border pt-4 first:border-t-0 first:pt-0">
       <h4 className="text-sm font-medium text-foreground">{part.title}</h4>
-      <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+      <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
         {part.description}
       </p>
       <p className="mt-2 text-xs text-muted-foreground">
@@ -120,8 +120,8 @@ function ExperiencePartCard({ part }: { part: ExperiencePart }) {
 
 function ExperienceLogo({ children }: { children: ReactNode }) {
   return (
-    <div className="rounded-xl bg-gradient-to-b from-white via-neutral-300 to-neutral-600 p-[2px] shadow-md">
-      <div className="flex h-[56px] w-[56px] items-center justify-center rounded-[15px] bg-black p-2">
+    <div className="shrink-0 rounded-xl bg-gradient-to-b from-white via-neutral-300 to-neutral-600 p-[2px] shadow-md">
+      <div className="flex h-12 w-12 items-center justify-center rounded-[13px] bg-black p-2 sm:h-14 sm:w-14 sm:rounded-[15px]">
         {children}
       </div>
     </div>
@@ -151,8 +151,8 @@ function ExperienceEntry({
         <ExperienceLogo>{logo}</ExperienceLogo>
 
         <div className="min-w-0 flex-1">
-          <h3 className="text-base font-medium text-foreground">{name}</h3>
-          <p className="text-sm text-muted-foreground">{role}</p>
+          <h3 className="text-sm font-medium text-foreground sm:text-base">{name}</h3>
+          <p className="text-xs text-muted-foreground sm:text-sm">{role}</p>
           <p className="mt-0.5 text-xs text-muted-foreground">{period}</p>
         </div>
       </div>
@@ -224,7 +224,7 @@ export default function Experience() {
   return (
     <div className="flex w-full flex-col items-start gap-4">
       <div className="flex items-center gap-2">
-        <h2 className="font-serif text-2xl font-medium sm:text-xl lg:text-xl">
+        <h2 className="page-subheading">
           Work Experience so far
         </h2>
       </div>

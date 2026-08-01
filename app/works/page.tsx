@@ -1,35 +1,30 @@
-import Link from "next/link";
-
 import Header from "@/components/header";
 import FeaturedWorks from "@/components/works/featured-works";
 import PersonalWorks from "@/components/works/personal-works";
+import PageMain from "@/components/page-main";
 
 export default function WorksPage() {
   return (
     <div className="min-h-screen overflow-x-clip bg-background text-foreground">
-      <main className="mx-auto flex w-full max-w-3xl flex-col px-4 py-16 sm:px-6 lg:px-8">
+      <PageMain>
         <Header />
 
-        <section className="mt-8">
-          <h1 className="font-serif text-2xl font-medium sm:text-3xl">
-            Featured Works
-          </h1>
-          <p className="mt-2 text-muted-foreground">
+        <section className="mt-6 sm:mt-8">
+          <h1 className="page-heading">Featured Works</h1>
+          <p className="page-lead mt-2">
             Projects I have collaborated on so far
           </p>
           <FeaturedWorks />
         </section>
 
-        <section className="mt-10">
-          <h2 className="text-2xl font-medium font-serif">
-            Some of my Side Projects
-          </h2>
-          <p className="mt-2 text-muted-foreground">
+        <section className="mt-8 sm:mt-10">
+          <h2 className="page-subheading">Some of my Side Projects</h2>
+          <p className="page-lead mt-2">
             Projects I have worked and been working on in my free time
           </p>
           <PersonalWorks />
         </section>
-      </main>
+      </PageMain>
     </div>
   );
 }

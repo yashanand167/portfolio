@@ -24,7 +24,7 @@ function NavLink({ href, label }: { href: string; label: string }) {
     pathname === href || (href !== "/" && pathname.startsWith(`${href}/`));
 
   return (
-    <li>
+    <li className="shrink-0">
       <Link
         href={href}
         className={cn(
@@ -53,21 +53,22 @@ export default function Header() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <header className="z-50 flex w-full items-center justify-between gap-4">
-      <div className="flex items-center gap-3">
+    <header className="z-50 flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-2">
+      <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
         <Link
           href="/"
-          className="aspect-square rounded-lg border border-border bg-card transition-opacity hover:opacity-80"
+          className="aspect-square shrink-0 rounded-lg border border-border bg-card transition-opacity hover:opacity-80"
         >
           <Image
             src="/Logo.png"
             alt="Home"
-            width={40}
-            height={40}
+            width={32}
+            height={32}
             loading="lazy"
+            className="size-8 sm:size-10"
           />
         </Link>
-        <ul className="flex flex-row gap-4 text-base font-medium">
+        <ul className="flex min-w-0 gap-2 text-xs font-medium sm:gap-4 sm:text-sm lg:text-base">
           {navItems.map((item) => (
             <NavLink key={item.href} {...item} />
           ))}
@@ -82,7 +83,7 @@ export default function Header() {
           stiffness: 400,
           damping: 30,
         }}
-        className="flex h-10 items-center rounded-md bg-primary px-3 text-sm font-medium text-primary-foreground transition-colors duration-300"
+        className="flex h-8 shrink-0 items-center rounded-md bg-primary px-2.5 text-xs font-medium text-primary-foreground transition-colors duration-300 sm:h-10 sm:px-3 sm:text-sm"
       >
         <span>Resume</span>
         <AnimatePresence mode="wait">

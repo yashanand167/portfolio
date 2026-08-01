@@ -15,6 +15,12 @@ const inspirations: Inspiration[] = [
     link: "https://manuarora.in",
   },
   {
+    image: "/Kirat.png",
+    name: "Harkirat Singh",
+    description: "Helped strengthen my foundation in software engineering.",
+    link: "https://x.com/kirat_tw",
+  },
+  {
     image: "/Chanhdai.png",
     name: "Chanhdai",
     description: "Inspired the personal lab and my push into animated UI components.",
@@ -60,21 +66,21 @@ const inspirations: Inspiration[] = [
 
 export default function Inspirations() {
   return (
-    <ul className="mt-8 flex flex-col gap-4">
+    <ul className="mt-6 flex flex-col gap-4 sm:mt-8">
       {inspirations.map((inspiration) => (
         <li key={inspiration.name} className="flex items-start gap-3 sm:gap-4">
-          <div className="size-10 shrink-0 overflow-hidden rounded-md border border-border/50 shadow-[0_1px_2px_oklch(0_0_0/0.04)]">
+          <div className="relative size-9 shrink-0 overflow-hidden rounded-md border border-border/50 shadow-[0_1px_3px_oklch(0_0_0/0.08),0_1px_2px_oklch(0_0_0/0.04)] sm:size-10">
             <Image
               src={inspiration.image}
               alt={inspiration.name}
-              width={40}
-              height={40}
+              fill
               loading="lazy"
-              className="size-10 object-cover"
+              sizes="(max-width: 640px) 36px, 40px"
+              className="object-cover"
             />
           </div>
 
-          <div className="flex flex-col">
+          <div className="min-w-0 flex-1">
             <a
               href={inspiration.link}
               target="_blank"

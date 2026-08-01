@@ -11,7 +11,7 @@ type BlogArticleProps = {
 export default function BlogArticle({ post }: BlogArticleProps) {
   return (
     <article>
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-muted-foreground">
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground sm:text-sm">
         <time dateTime={post.date}>
           {format(new Date(post.date), "MMMM d, yyyy")}
         </time>
@@ -19,14 +19,14 @@ export default function BlogArticle({ post }: BlogArticleProps) {
         <span>{post.readingTime} min read</span>
       </div>
 
-      <h1 className="mt-4 font-serif text-3xl font-medium sm:text-4xl">
+      <h1 className="mt-4 font-serif text-2xl font-medium sm:text-3xl lg:text-4xl">
         {post.title}
       </h1>
-      <p className="mt-3 text-lg leading-relaxed text-muted-foreground">
+      <p className="page-lead mt-3 sm:text-lg">
         {post.description}
       </p>
 
-      <div className="mt-10 border-t border-border pt-10">
+      <div className="mt-8 border-t border-border pt-8 sm:mt-10 sm:pt-10">
         <BlogPostContent content={post.content} />
       </div>
 

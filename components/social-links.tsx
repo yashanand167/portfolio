@@ -45,7 +45,7 @@ function SocialLinkBadge({ href, icon: Icon }: SocialLink) {
 export default function SocialLinks() {
   return (
     <div className="mt-4">
-      <p className="text-muted-foreground">Reach me out on</p>
+      <p className="text-sm text-muted-foreground sm:text-base">Reach me out on</p>
       <div className="mt-3 flex flex-wrap gap-2">
         {socialLinks.map((link) => (
           <SocialLinkBadge key={link.name} {...link} />

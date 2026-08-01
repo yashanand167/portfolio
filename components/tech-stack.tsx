@@ -85,7 +85,7 @@ function TechBadge({ name, icon: Icon, color, useForeground }: TechItem) {
 export default function TechStack() {
   return (
     <div className="mt-4">
-      <p className="text-muted-foreground">
+      <p className="text-sm text-muted-foreground sm:text-base">
         Stacks & skills I make use of to craft beautiful web and mobile products
       </p>
       <div className="mt-3 flex flex-wrap gap-1.5 sm:gap-2">

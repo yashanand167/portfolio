@@ -1,29 +1,29 @@
 import Header from "@/components/header";
 import GitHubContributionsSection from "@/components/github-contributions-section";
 import TechStack from "@/components/tech-stack";
-import Image from "next/image";
 import Separator from "@/components/separator";
 import ExperienceSection from "@/components/experience-section";
 import ProfileAvatar from "@/components/profile-avatar";
 import SocialLinks from "@/components/social-links";
 import TestimonialSection from "@/components/testimonal-section";
 import Footer from "@/components/footer";
+import PageMain from "@/components/page-main";
 
 export default function Home() {
   return (
     <div className="min-h-screen overflow-x-clip bg-background text-foreground">
-      <main className="mx-auto flex w-full max-w-3xl flex-col px-4 py-16 sm:px-6 lg:px-8">
+      <PageMain>
         <Header />
 
-        <section className="mt-10 w-full">
-          <h1 className="text-2xl font-medium sm:text-2xl lg:text-3xl">
-            <span className="inline-flex items-center gap-2">
+        <section className="mt-8 w-full sm:mt-10">
+          <h1 className="text-xl font-medium sm:text-2xl lg:text-3xl">
+            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
               <span className="font-serif font-bold">Hey, I am</span>
               <ProfileAvatar />
               <span className="font-serif font-bold">Yash Anand</span>
             </span>
           </h1>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          <p className="page-lead mt-3 max-w-2xl sm:text-lg">
             Design engineer building rich and sleek web
             applications with modern technologies and minimalistic design.
           </p>
@@ -43,10 +43,10 @@ export default function Home() {
         <section>
           <TestimonialSection />
         </section>
-        <section className="mt-10">
+        <section className="mt-8 sm:mt-10">
           <Footer />
         </section>
-      </main>
+      </PageMain>
     </div>
   );
 }

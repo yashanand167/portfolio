@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import BlogIcon from "@/components/custom-svgs/blog-icon";
 import BlogsSection from "@/components/blogs-section";
+import PageMain from "@/components/page-main";
 import { getAllBlogs } from "@/lib/blogs";
 
 export const metadata = {
@@ -14,30 +15,27 @@ export default function BlogsPage() {
 
   return (
     <div className="min-h-screen overflow-x-clip bg-background text-foreground">
-      <main className="mx-auto w-full max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <PageMain size="lg">
         <Link
           href="/"
-          className="inline-flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-foreground"
+          className="inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground sm:text-sm"
         >
           ← Back to home
         </Link>
 
-        <div className="mt-8 grid grid-cols-1 gap-y-4 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-x-4 sm:gap-y-3">
+        <div className="mt-6 grid grid-cols-1 gap-y-4 sm:mt-8 sm:grid-cols-[1fr_auto] sm:items-start sm:gap-x-4 sm:gap-y-3">
           <div className="flex items-center gap-2 sm:col-start-1 sm:row-start-1">
             <BlogIcon />
-            <h1 className="font-serif text-2xl font-medium sm:text-3xl">
-              My Writings
-            </h1>
+            <h1 className="page-heading">My Writings</h1>
           </div>
 
-          <p className="text-muted-foreground sm:col-start-1 sm:row-start-2">
+          <p className="page-lead sm:col-start-1 sm:row-start-2">
             Explore my thoughts and tech talks on various topics.
           </p>
 
           <BlogsSection posts={posts} />
         </div>
-        
-      </main>
+      </PageMain>
     </div>
   );
 }

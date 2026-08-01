@@ -28,9 +28,9 @@ export default function BlogTitleList({ posts, category }: BlogTitleListProps) {
         <li key={post.slug}>
           <Link
             href={getBlogHref(post.category, post.slug)}
-            className="group flex items-center justify-between gap-4 py-4 transition-colors"
+            className="group flex items-center justify-between gap-3 py-3 transition-colors sm:gap-4 sm:py-4"
           >
-            <span className="font-serif text-lg font-medium text-foreground transition-colors group-hover:text-foreground/80">
+            <span className="min-w-0 font-serif text-base font-medium text-foreground transition-colors group-hover:text-foreground/80 sm:text-lg">
               {post.title}
             </span>
             <span className="flex shrink-0 items-center gap-2 text-sm text-muted-foreground">

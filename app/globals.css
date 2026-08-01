@@ -364,8 +364,20 @@ body {
 }
 
 @layer components {
+  .page-heading {
+    @apply font-serif text-xl font-medium sm:text-2xl lg:text-3xl;
+  }
+
+  .page-subheading {
+    @apply font-serif text-lg font-medium sm:text-xl lg:text-2xl;
+  }
+
+  .page-lead {
+    @apply text-sm leading-relaxed text-muted-foreground sm:text-base;
+  }
+
   .blog-content {
-    @apply text-base leading-relaxed text-foreground;
+    @apply text-sm leading-relaxed text-foreground sm:text-base;
   }
 
   .blog-content > * + * {
@@ -373,11 +385,11 @@ body {
   }
 
   .blog-content h2 {
-    @apply mt-10 font-serif text-2xl font-medium text-foreground;
+    @apply mt-8 font-serif text-xl font-medium text-foreground sm:mt-10 sm:text-2xl;
   }
 
   .blog-content h3 {
-    @apply mt-8 font-serif text-xl font-medium text-foreground;
+    @apply mt-6 font-serif text-lg font-medium text-foreground sm:mt-8 sm:text-xl;
   }
 
   .blog-content p {

@@ -80,7 +80,7 @@ function TestimonialCard({
   return (
     <li
       className={cn(
-        "flex h-full flex-col border border-border bg-card p-5",
+        "flex h-full flex-col border border-border bg-card p-3 sm:p-5",
         "border-x-0",
         index === 0 ? "border-t-0" : "border-t",
         index === total - 1 ? "border-b-0" : "border-b",
@@ -98,10 +98,10 @@ function TestimonialCard({
         <Image
           src={image}
           alt={name}
-          width={44}
-          height={44}
+          width={40}
+          height={40}
           loading="lazy"
-          className="size-11 shrink-0 rounded-full border border-border object-cover"
+          className="size-10 shrink-0 rounded-full border border-border object-cover sm:size-11"
         />
 
         <div className="min-w-0 flex-1">
@@ -122,7 +122,7 @@ function TestimonialCard({
         </a>
       </div>
 
-      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+      <p className="mt-3 text-xs leading-relaxed text-muted-foreground sm:mt-4 sm:text-sm">
         {description}
       </p>
     </li>
@@ -132,9 +132,9 @@ function TestimonialCard({
 export default function TestimonialSection() {
   return (
     <div>
-      <h2 className="text-xl font-medium font-serif">People I worked with</h2>
+      <h2 className="page-subheading">People I worked with</h2>
 
-      <div className="relative left-1/2 mt-6 w-screen -translate-x-1/2 px-6 sm:px-10">
+      <div className="relative left-1/2 mt-4 w-screen -translate-x-1/2 px-4 sm:mt-6 sm:px-10">
         <span
           aria-hidden
           className={cn("absolute inset-x-0 top-0", horizontalRuleClassName)}

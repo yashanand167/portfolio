@@ -1,30 +1,31 @@
-import Link from "next/link";
 import Inspirations from "@/components/inspirations";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 import Separator from "@/components/separator";
+import PageMain from "@/components/page-main";
 
 export default function InspirationsPage() {
   return (
     <div className="min-h-screen overflow-x-clip bg-background text-foreground">
-      <main className="mx-auto flex w-full max-w-3xl flex-col px-4 py-16 sm:px-6 lg:px-8">
+      <PageMain>
         <Header />
 
-        <section className="mt-8">
-          <p className="mt-2 text-muted-foreground">
+        <section className="mt-6 sm:mt-8">
+          <p className="page-lead">
             The designers, engineers, and builders whose work has shaped the way
             I think, create, and build.
           </p>
-          <p>The list shall go on forever</p>
+          <p className="mt-2 text-sm text-foreground sm:text-base">
+            The list shall go on forever
+          </p>
         </section>
 
         <Inspirations />
-        <section className="mt-10">
-      <Separator />
-      <Footer />
-      </section>
-      </main>
-      
+        <section className="mt-8 sm:mt-10">
+          <Separator />
+          <Footer />
+        </section>
+      </PageMain>
     </div>
   );
 }
