@@ -1,6 +1,5 @@
 "use client";
 
-import { ThemeProvider as NextThemeProvider } from "next-themes";
 import {
   createContext,
   useContext,
@@ -60,10 +59,8 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
 
   return (
     <ThemeContext.Provider value={value}>
-      <NextThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        {children}
-        <ThemeButton />
-      </NextThemeProvider>
+      {children}
+      <ThemeButton />
     </ThemeContext.Provider>
   );
 }
