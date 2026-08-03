@@ -2,90 +2,70 @@
 
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
-import { Briefcase } from "lucide-react";
+import Link from "next/link";
+import { Briefcase, ArrowUpRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
 type ExperiencePart = {
   title: string;
+  period: string;
   description: string;
-  focus: string[];
   stack: string[];
 };
 
-const COMPANY_1_PARTS: ExperiencePart[] = [
+const DSEIDE_PARTS: ExperiencePart[] = [
   {
-    title: "Product design systems",
+    title: "0-to-1 Product Design for Mobile App",
+    period: "Aug 2025 - Oct 2025",
     description:
-      "Led product design for core product surfaces, defining flows, visual hierarchy, and interaction patterns that scaled across web and mobile.",
-    focus: ["Product Design", "UI/UX", "Design Systems"],
-    stack: ["Figma", "Framer"],
+      "Designed the entire core mobile application from a blank canvas in Figma. Structured a rigid 8px design system to handle high-density medical clinical records and workflows for healthcare professionals.",
+    stack: ["Figma", "UI/UX", "Mobile Design", "User Research", "Design System"],
   },
   {
-    title: "Frontend architecture",
+    title: "Mobile App Development",
+    period: "Oct 2025 - Nov 2025",
     description:
-      "Built and maintained frontend architecture for customer-facing apps, focusing on reusable components, performance, and clean state management.",
-    focus: ["Frontend Development", "Architecture"],
-    stack: ["React", "TypeScript"],
+      "Learned React Native and Expo on the fly to build and launch the production mobile app in 4 weeks. Developed clean local data caching via TanStack Query and state management with Zustand.",
+    stack: ["React Native", "Expo", "Zustand", "TanStack Query", "Mobile Dev"],
   },
   {
-    title: "Cross-platform product delivery",
+    title: "Web Dashboard & Landing Page",
+    period: "Nov 2025 - Dec 2025",
     description:
-      "Shipped shared product experiences across web and mobile, aligning design intent with native-feeling interactions on both platforms.",
-    focus: ["Product Design", "Frontend Development"],
-    stack: ["React Native", "React", "Figma"],
+      "Built the web dashboard from scratch using React, integrating REST APIs with Axios. Designed and shipped the corporate landing page on Framer.",
+    stack: ["React", "Framer", "Axios", "REST API", "Figma"],
   },
   {
-    title: "Interaction and motion design",
+    title: "Performance Refinement & API Testing",
+    period: "Jan 2026 - Feb 2026",
     description:
-      "Designed and implemented micro-interactions and motion patterns that made dense product flows feel clearer and more intentional.",
-    focus: ["Product Design", "Frontend Development"],
-    stack: ["Framer", "React", "Figma"],
+      "Optimized React Native rendering performance to eliminate frame drops. Wrote unit tests and mock API integrations using Jest to secure core flows.",
+    stack: ["Jest", "UI Performance", "React Native", "API Testing"],
   },
   {
-    title: "Quality and reliability",
+    title: "Event & Webinar Module Architecture",
+    period: "Mar 2026 - May 2026",
     description:
-      "Improved confidence in releases with component-level tests, regression coverage, and tighter feedback loops between design and engineering.",
-    focus: ["Frontend Development", "Testing"],
-    stack: ["Jest", "React Testing Library", "TypeScript"],
-  },
-  {
-    title: "Design-to-engineering handoff",
-    description:
-      "Tightened collaboration between design and engineering by translating Figma specs into production-ready components with clear ownership.",
-    focus: ["Product Design", "Frontend Development"],
-    stack: ["Figma", "React", "Git"],
+      "Spearheaded the technical architecture and interface design of the upcoming live event and medical webinar module, mapping state schemas and event routing.",
+    stack: ["System Architecture", "Figma", "Feature Ownership", "API Design"],
   },
 ];
 
 const FREELANCE_PARTS: ExperiencePart[] = [
   {
-    title: "Discovery & research",
+    title: "AI Nutrition App",
+    period: "Phase 1",
     description:
-      "Kicked off the AI-powered nutrition app with user research and competitor analysis to map audience needs, market gaps, and product opportunities.",
-    focus: ["Product Design", "User Research"],
-    stack: ["Figma", "Notion", "Miro"],
+      "Conducted comprehensive UX research and competitor analysis to establish the foundation and architecture of the application's design system.",
+    stack: ["UX Research", "Competitor Analysis", "Design System"],
   },
   {
-    title: "User flows & design system",
+    title: "UI Design & Dev Handoff",
+    period: "Phase 2",
     description:
-      "Mapped core journeys across onboarding, meal tracking, and recommendations, then built a scalable design system to keep the product consistent.",
-    focus: ["Product Design", "Design Systems"],
-    stack: ["Figma"],
-  },
-  {
-    title: "UI design & feedback loops",
-    description:
-      "Designed polished product screens and ran tight feedback loops with stakeholders to refine layouts, hierarchy, and interaction details.",
-    focus: ["Product Design", "UI/UX"],
-    stack: ["Figma", "Framer"],
-  },
-  {
-    title: "Design delivery",
-    description:
-      "Packaged final flows, components, and specs for handoff so the product team could move confidently into build.",
-    focus: ["Product Design"],
-    stack: ["Figma"],
+      "Created high-fidelity UI designs in Figma and ensured a seamless development handoff with detailed specifications.",
+    stack: ["UI Design", "Figma", "Dev Handoff"],
   },
 ];
 
@@ -107,12 +87,12 @@ function StackPills({ items }: { items: string[] }) {
 function ExperiencePartCard({ part }: { part: ExperiencePart }) {
   return (
     <li className="border-t border-border pt-4 first:border-t-0 first:pt-0">
-      <h4 className="text-sm font-medium text-foreground">{part.title}</h4>
+      <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+        <h4 className="text-sm font-medium text-foreground">{part.title}</h4>
+        <p className="text-xs text-muted-foreground">{part.period}</p>
+      </div>
       <p className="mt-1.5 text-xs leading-relaxed text-muted-foreground sm:text-sm">
         {part.description}
-      </p>
-      <p className="mt-2 text-xs text-muted-foreground">
-        {part.focus.join(" · ")}
       </p>
       <StackPills items={part.stack} />
     </li>
@@ -133,29 +113,44 @@ function ExperienceEntry({
   logo,
   name,
   role,
-  period,
   parts,
+  caseStudyHref,
+  initialVisibleCount = parts.length,
 }: {
   logo: ReactNode;
   name: string;
   role: string;
-  period: string;
   parts: ExperiencePart[];
+  caseStudyHref?: string;
+  initialVisibleCount?: number;
 }) {
   const [expanded, setExpanded] = useState(false);
-  const visibleParts = parts.slice(0, 2);
-  const hiddenParts = parts.slice(2);
+  const visibleParts = parts.slice(0, initialVisibleCount);
+  const hiddenParts = parts.slice(initialVisibleCount);
 
   return (
     <article className="w-full">
-      <div className="flex items-start gap-3">
-        <ExperienceLogo>{logo}</ExperienceLogo>
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex min-w-0 items-start gap-3">
+          <ExperienceLogo>{logo}</ExperienceLogo>
 
-        <div className="min-w-0 flex-1">
-          <h3 className="text-sm font-medium text-foreground sm:text-base">{name}</h3>
-          <p className="text-xs text-muted-foreground sm:text-sm">{role}</p>
-          <p className="mt-0.5 text-xs text-muted-foreground">{period}</p>
+          <div className="min-w-0">
+            <h3 className="text-sm font-medium text-foreground sm:text-base">
+              {name}
+            </h3>
+            <p className="text-xs text-muted-foreground sm:text-sm">{role}</p>
+          </div>
         </div>
+
+        {caseStudyHref ? (
+          <Link
+            href={caseStudyHref}
+            className="inline-flex shrink-0 items-center gap-1 text-xs font-medium text-foreground transition-colors hover:text-muted-foreground sm:text-sm"
+          >
+            Case Study
+            <ArrowUpRight className="size-3.5 sm:size-4" aria-hidden />
+          </Link>
+        ) : null}
       </div>
 
       <ul className="mt-5 space-y-4">
@@ -189,10 +184,11 @@ function ExperienceEntry({
 function Company1() {
   return (
     <ExperienceEntry
-      name="Dseide"
-      role="Product Design & Frontend Development"
-      period="Aug 2025 – May 2026"
-      parts={COMPANY_1_PARTS}
+      name="Dseide Healthcare Network"
+      role="Full-stack & Product Design • Bangalore"
+      parts={DSEIDE_PARTS}
+      initialVisibleCount={2}
+      caseStudyHref="/blogs/design-engineering/shipping-dseide-healthcare-network"
       logo={
         <Image
           src="/Dseide.png"
@@ -211,9 +207,9 @@ function Freelance() {
   return (
     <ExperienceEntry
       name="Freelance"
-      role="Product Designer"
-      period="Feb 2025 – May 2025"
+      role="Product Design • Global"
       parts={FREELANCE_PARTS}
+      caseStudyHref="/blogs/design-engineering/ai-nutrition-app-startup-playbook"
       logo={
         <Briefcase className="size-5 text-white sm:size-6" aria-hidden />
       }
@@ -225,9 +221,7 @@ export default function Experience() {
   return (
     <div className="flex w-full flex-col items-start gap-4">
       <div className="flex items-center gap-2">
-        <h2 className="page-subheading">
-          Work Experience so far
-        </h2>
+        <h2 className="page-subheading">Work Experience so far</h2>
       </div>
 
       <div className="flex w-full flex-col gap-10">
