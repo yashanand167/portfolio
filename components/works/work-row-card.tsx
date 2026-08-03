@@ -1,5 +1,6 @@
 import { ArrowUpRight } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 type WorkRowCardProps = {
   title: string;
@@ -53,6 +54,14 @@ export default function WorkRowCard({
 
   if (!link) {
     return <article>{content}</article>;
+  }
+
+  if (link.startsWith("/")) {
+    return (
+      <Link href={link} className="block">
+        {content}
+      </Link>
+    );
   }
 
   return (

@@ -16,7 +16,7 @@ const featuredWorks: FeaturedWork[] = [
     subtitle: "Cross platform development and product design",
     description: "Contributed Heavily in the app design part and cross platform development in React Native.",
     image: "/Dseide.png",
-    links: ["https://dseide.com"],
+    links: ["/blogs/design-engineering/shipping-dseide-healthcare-network"],
   },
   {
     title: "MailGauge",
@@ -31,7 +31,7 @@ const featuredWorks: FeaturedWork[] = [
     subtitle: "Product design",
     description: "Product design of a cross-platform mobile application.",
     image: "/Nutrition.png",
-    links: ["https://www.google.com"],
+    links: ["/blogs/design-engineering/ai-nutrition-app-startup-playbook"],
   },
 ];
 
