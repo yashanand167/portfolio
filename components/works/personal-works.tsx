@@ -16,7 +16,7 @@ const personalWorks: PersonalWork[] = [
     subtitle: "Experimental",
     description: "A collection of my personal crafted UI components",
     image: "/Logo.png",
-    links: ["https://www.google.com"],
+    links: ["https://lab.yashanand.com"],
   },
   {
     title: "Apple UI Exploration",
@@ -32,7 +32,7 @@ const personalWorks: PersonalWork[] = [
     description:
       "An AI powered survey platform for collecting user feedback and creating a survey with AI features.",
     image: "/AskNow.png",
-    links: ["https://www.google.com"],
+    links: ["https://asknow.vercel.app/"],
   },
   {
     title: "Systems Before Screen",

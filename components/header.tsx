@@ -53,6 +53,9 @@ const navItems: {
 const activeUnderlineClassName =
   "bg-[radial-gradient(circle,var(--primary)_2px,transparent_2px)] bg-size-[12px_100%] bg-repeat-x bg-position-[center]";
 
+const resumeUrl =
+  "https://drive.google.com/file/d/1wBVjU-DM4jgqppJYS9PkESxO1yWmW4u1/view";
+
 function NavLink({
   href,
   label,
@@ -150,7 +153,10 @@ export default function Header() {
           ))}
         </ul>
       </div>
-      <motion.button
+      <motion.a
+        href={resumeUrl}
+        target="_blank"
+        rel="noopener noreferrer"
         layout
         onHoverStart={() => setHovered(true)}
         onHoverEnd={() => setHovered(false)}
@@ -159,7 +165,7 @@ export default function Header() {
           stiffness: 400,
           damping: 30,
         }}
-        className="flex h-8 border border-white shrink-0 items-center rounded-md bg-primary px-2.5 text-xs font-medium text-primary-foreground transition-colors duration-300 sm:h-10 sm:px-3 sm:text-sm"
+        className="flex h-8 shrink-0 items-center rounded-md border border-white bg-primary px-2.5 text-xs font-medium text-primary-foreground transition-colors duration-300 sm:h-10 sm:px-3 sm:text-sm"
       >
         <span>Resume</span>
         <AnimatePresence mode="wait">
@@ -194,7 +200,7 @@ export default function Header() {
             </motion.div>
           )}
         </AnimatePresence>
-      </motion.button>
+      </motion.a>
     </header>
   );
 }

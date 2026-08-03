@@ -2,6 +2,7 @@
 
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
+import { Briefcase } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -25,7 +26,7 @@ const COMPANY_1_PARTS: ExperiencePart[] = [
     description:
       "Built and maintained frontend architecture for customer-facing apps, focusing on reusable components, performance, and clean state management.",
     focus: ["Frontend Development", "Architecture"],
-    stack: ["React", "TypeScript", "Next.js"],
+    stack: ["React", "TypeScript"],
   },
   {
     title: "Cross-platform product delivery",
@@ -214,7 +215,7 @@ function Freelance() {
       period="Feb 2025 – May 2025"
       parts={FREELANCE_PARTS}
       logo={
-        <span className="font-serif text-lg font-medium text-white">F</span>
+        <Briefcase className="size-5 text-white sm:size-6" aria-hidden />
       }
     />
   );
