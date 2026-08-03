@@ -20,11 +20,11 @@ const personalWorks: PersonalWork[] = [
   },
   {
     title: "Apple UI Exploration",
-    subtitle: "Design principles in web interfaces",
+    subtitle: "Yet to deploy · Design principles in web interfaces",
     description:
       "An exploration of Apple's design principles, translated into responsive web interfaces.",
     image: "/Apple.png",
-    links: ["https://www.google.com"],
+    links: ["https://github.com/yashanand167/apple-ui-study"],
   },
   {
     title: "AskNow",
@@ -36,11 +36,11 @@ const personalWorks: PersonalWork[] = [
   },
   {
     title: "Systems Before Screen",
-    subtitle: "Personal design handbook",
+    subtitle: "Yet to deploy · Personal design handbook",
     description:
       "Crafting my own personal handbook on web on using AI in product design with importance of user research and design systems.",
     image: "/Handbook.png",
-    links: ["https://www.google.com"],
+    links: ["https://github.com/yashanand167/System-before-screens"],
   },
 ];
 
