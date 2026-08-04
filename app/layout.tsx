@@ -28,6 +28,11 @@ export const metadata: Metadata = {
   },
   description:
     "Design engineer building rich and sleek web applications with modern technologies and minimalistic design.",
+  icons: {
+    icon: "/FavIcon.png",
+    shortcut: "/FavIcon.png",
+    apple: "/FavIcon.png",
+  },
 };
 
 export default function RootLayout({
