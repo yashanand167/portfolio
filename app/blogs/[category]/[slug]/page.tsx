@@ -2,7 +2,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import BlogArticle from "@/components/blog-article";
-import PageMain from "@/components/page-main";
 import { getAllBlogParams, getBlogBySlug } from "@/lib/blogs";
 import { BLOG_CATEGORIES, type BlogCategory } from "@/lib/blogs/types";
 
@@ -51,19 +50,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   }
 
   return (
-    <div className="min-h-screen overflow-x-clip bg-background text-foreground">
-      <PageMain>
-        <Link
-          href="/blogs"
-          className="inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground sm:text-sm"
-        >
-          ← Back to writings
-        </Link>
+    <>
+      <Link
+        href="/blogs"
+        className="inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground sm:text-sm"
+      >
+        ← Back to writings
+      </Link>
 
-        <div className="mt-6 sm:mt-8">
-          <BlogArticle post={post} />
-        </div>
-      </PageMain>
-    </div>
+      <div className="mt-6 sm:mt-8">
+        <BlogArticle post={post} />
+      </div>
+    </>
   );
 }
