@@ -16,7 +16,7 @@ const featuredWorks: FeaturedWork[] = [
     subtitle: "Cross platform development and product design",
     description: "Contributed Heavily in the app design part and cross platform development in React Native.",
     image: "/Dseide.png",
-    links: ["/blogs/design-engineering/shipping-dseide-healthcare-network"],
+    links: ["https://dseide.com"],
   },
   {
     title: "MailGauge",
@@ -31,7 +31,7 @@ const featuredWorks: FeaturedWork[] = [
     subtitle: "Product design",
     description: "Product design of a cross-platform mobile application.",
     image: "/Nutrition.png",
-    links: ["/blogs/design-engineering/ai-nutrition-app-startup-playbook"],
+    links: ["https://www.figma.com/design/IjCiARPScq2kN5yHSVdU8o/AI-powered-Nutrition-App?node-id=0-1&t=Fk5oI34Vw3vOwY15-1"],
   },
 ];
 

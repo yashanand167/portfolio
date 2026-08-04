@@ -112,11 +112,7 @@ export default function ThemeButton() {
                             style={{ background: t.color }}
                           />
                           {isActive ? (
-                            <motion.span
-                              layoutId="active-theme-ring"
-                              transition={spring}
-                              className="absolute inset-[-3px] rounded-full border-2 border-white"
-                            />
+                            <span className="absolute inset-[-3px] rounded-full border-2 border-white" />
                           ) : null}
                         </motion.button>
                       );
