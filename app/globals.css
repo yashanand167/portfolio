@@ -298,4 +298,8 @@ body {
   .blog-content pre code {
     @apply bg-transparent p-0;
   }
+
+  .blog-content img {
+    @apply mt-6 w-full rounded-xl border border-border bg-muted/20;
+  }
 }

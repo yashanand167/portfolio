@@ -9,7 +9,7 @@ tags:
   - startup
   - dseide
 published: true
-cover:
+cover: /Dseide/ProfileSection.png
 ---
 
 At early-stage startups, velocity is the ultimate metric. When we set out to build Dseide, a dedicated professional network and communication tool for healthcare practitioners, we faced a major constraint: ship the entire mobile MVP and web platform in 12 weeks or miss our market window.
@@ -41,6 +41,10 @@ We moved directly from competitive notes into rapid wireframing, focusing on onb
 
 By prioritizing low-fidelity sketches first, we aligned on the user flow with medical practitioners and clinicians before writing code, catching potential UX friction points early.
 
+![Early product ideation and hospital workflow mapping](/Dseide/Note1.png)
+
+![Community and events business flow sketch](/Dseide/Note2.png)
+
 ---
 
 ## 3. The Design-to-Code Advantage: A Component-Driven Workflow
@@ -52,6 +56,8 @@ Because I was writing both the designs and the frontend code:
 - Components in Figma mapped 1:1 to React Native / Tailwind CSS styles.
 - Colors were bound to semantic CSS tokens, making light/dark mode and brand changes instant.
 - Every state (default, active, disabled, loading skeletons) was modeled from day one, eliminating the need for developer back-and-forth.
+
+![Dseide brand colors, typography, and semantic tokens](/Dseide/Design-System.png)
 
 ---
 
@@ -73,9 +79,15 @@ To maintain maximum velocity:
 
 Doctors are highly protective of their credentials and professional identity. I designed and coded the verified Profile section to highlight their clinical departments, affiliations, and verified badge prominently.
 
+![Verified profile, journey, and experience editing flows](/Dseide/ProfileSection.png)
+
 ### Verified Community Creation Flow
 
 To keep the clinical community high-signal, community creators submit their proposal to the admin queue. Once approved by the admin dashboard, the creator is guided through a fast terms-and-outcomes setup flow. I built both the Figma flow and the React state machine for this setup wizard.
+
+![Community creation and request submission flow](/Dseide/Request.png)
+
+![Community review process and go-live activation](/Dseide/Verified.png)
 
 ---
 
@@ -88,3 +100,5 @@ Working in a high-velocity startup taught me how design-engineering acts as a fo
 - You avoid the anti-pattern of over-engineering features before checking if users actually want them.
 
 Startup development isn't about writing the most complex code; it's about shipping the most impactful solution as fast as possible.
+
+![Building and shipping under startup velocity](/Dseide/Memos.png)
