@@ -1,3 +1,4 @@
+import Header from "@/components/header";
 import PageMain from "@/components/page-main";
 
 type BlogPostLayoutProps = {
@@ -7,7 +8,10 @@ type BlogPostLayoutProps = {
 export default function BlogPostLayout({ children }: BlogPostLayoutProps) {
   return (
     <div className="min-h-screen overflow-x-clip bg-background text-foreground">
-      <PageMain>{children}</PageMain>
+      <PageMain>
+        <Header />
+        {children}
+      </PageMain>
     </div>
   );
 }

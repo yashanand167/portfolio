@@ -11,6 +11,7 @@ import BlogIcon from "@/components/custom-svgs/blog-icon";
 import GalleryIcon from "@/components/custom-svgs/gallery-icon";
 import InspirationIcon from "@/components/custom-svgs/inspiration-icon";
 import WorkIcon from "@/components/custom-svgs/work-icon";
+import ThemeButton from "@/components/ui/theme-button";
 import { cn } from "@/lib/utils";
 import type { ComponentType } from "react";
 
@@ -153,54 +154,57 @@ export default function Header() {
           ))}
         </ul>
       </div>
-      <motion.a
-        href={resumeUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        layout
-        onHoverStart={() => setHovered(true)}
-        onHoverEnd={() => setHovered(false)}
-        transition={{
-          type: "spring",
-          stiffness: 400,
-          damping: 30,
-        }}
-        className="flex h-8 shrink-0 items-center rounded-md border border-white bg-primary px-2.5 text-xs font-medium text-primary-foreground transition-colors duration-300 sm:h-10 sm:px-3 sm:text-sm"
-      >
-        <span>Resume</span>
-        <AnimatePresence mode="wait">
-          {hovered && (
-            <motion.div
-              key="icon"
-              initial={{
-                width: 0,
-                opacity: 0,
-                x: -6,
-                marginLeft: 0,
-              }}
-              animate={{
-                width: "auto",
-                opacity: 1,
-                x: 0,
-                marginLeft: 8,
-              }}
-              exit={{
-                width: 0,
-                opacity: 0,
-                x: -6,
-                marginLeft: 0,
-              }}
-              transition={{
-                duration: 0.2,
-                ease: "easeOut",
-              }}
-              className="overflow-hidden"
-            >
-              <Download size={16} />
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.a>
+      <div className="flex shrink-0 items-center gap-2">
+        <ThemeButton />
+        <motion.a
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          layout
+          onHoverStart={() => setHovered(true)}
+          onHoverEnd={() => setHovered(false)}
+          transition={{
+            type: "spring",
+            stiffness: 400,
+            damping: 30,
+          }}
+          className="flex h-8 shrink-0 items-center rounded-md border border-white bg-primary px-2.5 text-xs font-medium text-primary-foreground transition-colors duration-300 sm:h-10 sm:px-3 sm:text-sm"
+        >
+          <span>Resume</span>
+          <AnimatePresence mode="wait">
+            {hovered && (
+              <motion.div
+                key="icon"
+                initial={{
+                  width: 0,
+                  opacity: 0,
+                  x: -6,
+                  marginLeft: 0,
+                }}
+                animate={{
+                  width: "auto",
+                  opacity: 1,
+                  x: 0,
+                  marginLeft: 8,
+                }}
+                exit={{
+                  width: 0,
+                  opacity: 0,
+                  x: -6,
+                  marginLeft: 0,
+                }}
+                transition={{
+                  duration: 0.2,
+                  ease: "easeOut",
+                }}
+                className="overflow-hidden"
+              >
+                <Download size={16} />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.a>
+      </div>
     </header>
   );
 }

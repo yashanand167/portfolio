@@ -9,7 +9,6 @@ import {
   type ReactNode,
 } from "react";
 
-import ThemeButton from "@/components/ui/theme-button";
 import { themes, type Theme } from "@/lib/theme";
 
 type ThemeContextType = {
@@ -58,10 +57,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   );
 
   return (
-    <ThemeContext.Provider value={value}>
-      {children}
-      <ThemeButton />
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 }
 
