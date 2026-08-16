@@ -53,7 +53,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     <>
       <Link
         href="/blogs"
-        className="mt-6 inline-flex items-center gap-2 text-xs text-muted-foreground transition-colors hover:text-foreground sm:mt-8 sm:text-sm"
+        className="mt-6 inline-flex w-fit items-center gap-2 text-xs text-muted-foreground outline-none transition-colors hover:text-foreground focus:outline-none focus-visible:outline-none [-webkit-tap-highlight-color:transparent] sm:mt-8 sm:text-sm"
       >
         ← Back to writings
       </Link>
