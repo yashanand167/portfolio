@@ -22,6 +22,10 @@ This post is me documenting how React actually works, in the way I wish someone 
 There is a difference between React components, and elements and component instances
 Let's take a simple component for instance
 
+```react-chart
+component-tree
+```
+
 ```jsx
 const App = () => {
   return (
@@ -128,6 +132,10 @@ All React does is create a tree of elements
 This is a fast process because React elements are just JavaScript Objects
 
 This all happens when we call the render() method
+
+```react-chart
+state-update
+```
 
 ### Virtual DOM vs real DOM
 
@@ -259,6 +267,10 @@ That is why React feels fast when used well: most of the work stays in cheap Jav
 ## Diffing algorithm
 
 Reconciliation is powered by React's diffing algorithm. It is not a perfect tree-to-tree diff of every node. That would be too slow. React uses a few heuristics instead.
+
+```react-chart
+reconcile
+```
 
 ### 1. Elements of different types produce different trees
 
@@ -481,6 +493,10 @@ With key={index}
 ## Rendering
 
 Rendering is where everything above finally becomes a running UI. This is the last piece of the model for me.
+
+```react-chart
+dom-update
+```
 
 ### What "render" actually means
 
