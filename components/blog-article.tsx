@@ -31,7 +31,7 @@ export default function BlogArticle({ post }: BlogArticleProps) {
       </div>
 
       {post.category === "personal" ? (
-        <footer className="mt-12 flex flex-col items-start gap-2 border-t border-border pt-8">
+        <footer className="mt-12 flex flex-col items-start gap-2 overflow-visible border-t border-border pt-8 pb-4">
           <p className="text-sm text-muted-foreground">Written by Yash Anand</p>
           <Signature />
         </footer>
