@@ -76,10 +76,7 @@ export default function ThemeButton() {
               <button
                 type="button"
                 aria-label="Close color palette"
-                onClick={() => {
-                  playMetalClick();
-                  setExpanded(false);
-                }}
+                onClick={() => setExpanded(false)}
                 className="flex h-5 w-5 items-center justify-center rounded-full text-white/60 transition-colors hover:text-white"
               >
                 <X size={12} />
@@ -105,10 +102,7 @@ export default function ThemeButton() {
                     transition={{ ...spring, delay: 0.03 + index * 0.025 }}
                     whileHover={{ scale: 1.12 }}
                     whileTap={{ scale: 0.9 }}
-                    onClick={() => {
-                      playMetalClick();
-                      setTheme(t.id);
-                    }}
+                    onClick={() => setTheme(t.id)}
                     className="relative h-[1.125rem] w-[1.125rem] rounded-full ring-1 ring-white/25"
                   >
                     <span
