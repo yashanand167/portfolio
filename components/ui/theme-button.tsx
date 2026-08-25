@@ -4,7 +4,9 @@ import { AnimatePresence, motion } from "motion/react";
 import { Palette, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
+import { useSound } from "@/hooks/use-sound";
 import { useColorTheme } from "@/context/theme-provider";
+import { metalClickSound } from "@/lib/metal-click";
 import { themes } from "@/lib/theme";
 
 const spring = { type: "spring", stiffness: 400, damping: 32 } as const;
@@ -13,6 +15,10 @@ export default function ThemeButton() {
   const [expanded, setExpanded] = useState(false);
   const { theme, setTheme } = useColorTheme();
   const containerRef = useRef<HTMLDivElement>(null);
+  const [playMetalClick] = useSound(metalClickSound, {
+    volume: 0.45,
+    interrupt: true,
+  });
 
   useEffect(() => {
     if (!expanded) {
@@ -46,7 +52,10 @@ export default function ThemeButton() {
         type="button"
         aria-label="Open color palette"
         aria-expanded={expanded}
-        onClick={() => setExpanded((value) => !value)}
+        onClick={() => {
+          playMetalClick();
+          setExpanded((value) => !value);
+        }}
         className="flex h-8 items-center justify-center rounded-md border border-white bg-gradient-to-b from-neutral-700 to-black px-2.5 text-white shadow-sm transition-opacity hover:opacity-90 sm:h-10 sm:px-3"
       >
         <Palette className="size-3.5 sm:size-4" aria-hidden />
@@ -67,7 +76,10 @@ export default function ThemeButton() {
               <button
                 type="button"
                 aria-label="Close color palette"
-                onClick={() => setExpanded(false)}
+                onClick={() => {
+                  playMetalClick();
+                  setExpanded(false);
+                }}
                 className="flex h-5 w-5 items-center justify-center rounded-full text-white/60 transition-colors hover:text-white"
               >
                 <X size={12} />
@@ -93,7 +105,10 @@ export default function ThemeButton() {
                     transition={{ ...spring, delay: 0.03 + index * 0.025 }}
                     whileHover={{ scale: 1.12 }}
                     whileTap={{ scale: 0.9 }}
-                    onClick={() => setTheme(t.id)}
+                    onClick={() => {
+                      playMetalClick();
+                      setTheme(t.id);
+                    }}
                     className="relative h-[1.125rem] w-[1.125rem] rounded-full ring-1 ring-white/25"
                   >
                     <span
