@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     template: "%s | Yash Anand",
   },
   description:
-    "Design engineer building rich and sleek web applications with modern technologies and minimalistic design.",
+    "Frontend engineer with a product design focus, shaping clear interfaces and shipping them as polished, modern web experiences.",
   icons: {
     icon: "/FavIcon.png",
     shortcut: "/FavIcon.png",

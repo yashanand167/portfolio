@@ -24,8 +24,11 @@ export default function Home() {
             </span>
           </h1>
           <p className="page-lead mt-3 max-w-2xl sm:text-lg">
-            Design engineer building rich and sleek web
-            applications with modern technologies and minimalistic design.
+            <span className="font-medium text-foreground">Frontend engineer</span>{" "}
+            with a{" "}
+            <span className="font-medium text-foreground">product design</span>{" "}
+            focus, shaping clear interfaces and shipping them as polished,
+            modern web experiences.
           </p>
           <TechStack />
           <Separator />
