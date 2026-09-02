@@ -24,9 +24,9 @@ export default function Home() {
             </span>
           </h1>
           <p className="page-lead mt-3 max-w-2xl sm:text-lg">
-            <span className="font-medium text-foreground">Frontend engineer</span>{" "}
+            <span className="font-medium text-foreground">Frontend Engineer</span>{" "}
             with a{" "}
-            <span className="font-medium text-foreground">product design</span>{" "}
+            <span className="font-medium text-foreground">Product Design</span>{" "}
             focus, shaping clear interfaces and shipping them as polished,
             modern web experiences.
           </p>
