@@ -12,6 +12,14 @@ type PersonalWork = {
 
 const personalWorks: PersonalWork[] = [
   {
+    title: "kylp",
+    subtitle: "Keyboard practice playground",
+    description:
+      "A keyboard practice playground where I crafted the UI keyboard from scratch using a context provider.",
+    image: "/kylp.png",
+    links: ["https://kylp-mu.vercel.app/"],
+  },
+  {
     title: "Personal Lab",
     subtitle: "Experimental",
     description: "A collection of my personal crafted UI components",
