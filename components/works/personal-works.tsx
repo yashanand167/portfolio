@@ -12,6 +12,13 @@ type PersonalWork = {
 
 const personalWorks: PersonalWork[] = [
   {
+    title: "Personal Lab",
+    subtitle: "Experimental",
+    description: "A collection of my personal crafted UI components",
+    image: "/Logo.png",
+    links: ["https://lab.yashanand.com"],
+  },
+  {
     title: "kylp",
     subtitle: "Keyboard practice playground",
     description:
@@ -20,11 +27,12 @@ const personalWorks: PersonalWork[] = [
     links: ["https://kylp-mu.vercel.app/"],
   },
   {
-    title: "Personal Lab",
-    subtitle: "Experimental",
-    description: "A collection of my personal crafted UI components",
-    image: "/Logo.png",
-    links: ["https://lab.yashanand.com"],
+    title: "AskNow",
+    subtitle: "AI-powered survey platform",
+    description:
+      "An AI powered survey platform for collecting user feedback and creating a survey with AI features.",
+    image: "/AskNow.png",
+    links: ["https://asknow.vercel.app/"],
   },
   {
     title: "Apple UI Exploration",
@@ -33,14 +41,6 @@ const personalWorks: PersonalWork[] = [
       "An exploration of Apple's design principles, translated into responsive web interfaces.",
     image: "/Apple.png",
     links: ["https://github.com/yashanand167/apple-ui-study"],
-  },
-  {
-    title: "AskNow",
-    subtitle: "AI-powered survey platform",
-    description:
-      "An AI powered survey platform for collecting user feedback and creating a survey with AI features.",
-    image: "/AskNow.png",
-    links: ["https://asknow.vercel.app/"],
   },
   {
     title: "Systems Before Screen",
