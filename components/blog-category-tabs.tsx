@@ -32,7 +32,7 @@ export default function BlogCategoryTabs({
   return (
     <div
       className={cn(
-        "inline-flex w-fit items-center gap-1 rounded-xl border border-border bg-muted/40 p-1",
+        "relative z-10 inline-flex w-fit items-center gap-1 rounded-xl border border-border bg-card p-1 shadow-2xs",
         className,
       )}
     >

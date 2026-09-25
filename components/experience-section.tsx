@@ -75,7 +75,7 @@ function StackPills({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="rounded-md border border-border px-2 py-0.5 text-xs text-muted-foreground"
+          className="relative z-10 rounded-md border border-border bg-card px-2 py-0.5 text-xs text-muted-foreground shadow-2xs"
         >
           {item}
         </li>

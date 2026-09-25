@@ -12,7 +12,7 @@ export default function ProfileAvatar() {
         className="relative inline-flex"
       >
   
-        <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-border bg-card shadow-sm sm:h-14 sm:w-14 sm:rounded-2xl">
+        <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl border border-border bg-card shadow-[0_6px_16px_-2px_rgba(0,0,0,0.08)] sm:h-14 sm:w-14 sm:rounded-2xl">
           <Image
             src="/Profile.png"
             alt="Profile"

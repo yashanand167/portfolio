@@ -24,11 +24,15 @@ export default function Home() {
             </span>
           </h1>
           <p className="page-lead mt-3 max-w-2xl sm:text-lg">
-            <span className="font-medium text-foreground">Frontend Engineer</span>{" "}
-            with a{" "}
+            <span className="font-medium text-foreground">Design Engineer</span>{" "}
+            crafting at the intersection of{" "}
             <span className="font-medium text-foreground">Product Design</span>{" "}
-            focus, shaping clear interfaces and shipping them as polished,
-            modern web experiences.
+            and{" "}
+            <span className="font-medium text-foreground">
+              Frontend Architecture
+            </span>
+            , shaping clear interfaces and shipping them as polished, modern web
+            experiences.
           </p>
           <TechStack />
           <Separator />
