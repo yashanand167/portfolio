@@ -4,7 +4,6 @@ import TechStack from "@/components/tech-stack";
 import Separator from "@/components/separator";
 import ExperienceSection from "@/components/experience-section";
 import ProfileAvatar from "@/components/profile-avatar";
-import SocialLinks from "@/components/social-links";
 import TestimonialSection from "@/components/testimonal-section";
 import Footer from "@/components/footer";
 import PageMain from "@/components/page-main";
@@ -35,8 +34,6 @@ export default function Home() {
             experiences.
           </p>
           <TechStack />
-          <Separator />
-          <SocialLinks />
           <Separator />
           <div className="mt-8 w-full overflow-x-auto">
             <GitHubContributionsSection />

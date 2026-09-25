@@ -14,7 +14,7 @@ export default function PageMain({
   return (
     <main
       className={cn(
-        "mx-auto flex w-full flex-col px-4 py-10 sm:px-6 sm:py-16 lg:px-8",
+        "mx-auto flex w-full flex-col px-4 py-10 pb-20 sm:px-6 sm:py-16 sm:pb-24 lg:px-8",
         size === "lg" ? "max-w-4xl" : "max-w-3xl",
         className,
       )}

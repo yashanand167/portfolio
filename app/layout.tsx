@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 
+import SocialLinks from "@/components/social-links";
 import { ThemeProvider } from "@/context/theme-provider";
 import "./globals.css";
 
@@ -52,6 +53,7 @@ export default function RootLayout({
         </Script>
         <ThemeProvider>
           {children}
+          <SocialLinks />
         </ThemeProvider>
       </body>
     </html>
