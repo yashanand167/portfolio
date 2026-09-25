@@ -28,9 +28,12 @@ const galleryItems = [...artworks, ...sketches];
 
 export default function Artworks() {
   return (
-    <div className="mt-6 columns-2 gap-4 sm:mt-8 sm:columns-3 sm:gap-5">
+    <div className="relative z-10 mt-6 columns-2 gap-4 sm:mt-8 sm:columns-3 sm:gap-5">
       {galleryItems.map((art, index) => (
-        <figure key={art.src} className="mb-4 break-inside-avoid sm:mb-5">
+        <figure
+          key={art.src}
+          className="relative z-10 mb-4 break-inside-avoid overflow-hidden rounded-lg bg-card shadow-2xs sm:mb-5"
+        >
           <Image
             src={art.src}
             alt={art.alt}
@@ -39,7 +42,7 @@ export default function Artworks() {
             priority={index === 0}
             loading={index === 0 ? undefined : index < 6 ? "eager" : "lazy"}
             sizes="(max-width: 640px) 50vw, 33vw"
-            className="h-auto w-full rounded-lg"
+            className="h-auto w-full rounded-lg object-cover"
           />
         </figure>
       ))}

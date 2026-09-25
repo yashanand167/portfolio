@@ -66,10 +66,10 @@ const inspirations: Inspiration[] = [
 
 export default function Inspirations() {
   return (
-    <ul className="mt-6 flex flex-col gap-4 sm:mt-8">
+    <ul className="relative z-10 mt-6 flex flex-col gap-4 sm:mt-8">
       {inspirations.map((inspiration) => (
-        <li key={inspiration.name} className="flex items-start gap-3 sm:gap-4">
-          <div className="relative size-9 shrink-0 overflow-hidden rounded-md border border-border/50 shadow-[0_1px_3px_oklch(0_0_0/0.08),0_1px_2px_oklch(0_0_0/0.04)] sm:size-10">
+        <li key={inspiration.name} className="relative z-10 flex items-start gap-3 sm:gap-4">
+          <div className="relative size-9 shrink-0 overflow-hidden rounded-md border border-border/50 bg-card shadow-[0_1px_3px_oklch(0_0_0/0.08),0_1px_2px_oklch(0_0_0/0.04)] sm:size-10">
             <Image
               src={inspiration.image}
               alt={inspiration.name}
