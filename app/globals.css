@@ -322,6 +322,6 @@ body::before {
   }
 
   .blog-content img {
-    @apply mt-6 w-full rounded-xl border border-border bg-muted/20;
+    @apply relative z-10 mt-6 w-full rounded-xl border border-border bg-card object-cover;
   }
 }
