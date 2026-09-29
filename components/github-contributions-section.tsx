@@ -6,9 +6,8 @@ import {
 } from "@/components/github-contributions";
 import { getCachedContributions } from "@/lib/get-cached-contributions";
 
-const GITHUB_USERNAME = process.env.GITHUB_USERNAME ?? "yashanand167";
-const GITHUB_PROFILE_URL =
-  process.env.GITHUB_PROFILE_URL ?? `https://github.com/${GITHUB_USERNAME}`;
+const GITHUB_USERNAME = process.env.GITHUB_USERNAME!;
+const GITHUB_PROFILE_URL = process.env.GITHUB_PROFILE_URL!;
 
 export default function GitHubContributionsSection() {
   const contributions = getCachedContributions(GITHUB_USERNAME);
