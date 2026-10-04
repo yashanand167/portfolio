@@ -11,13 +11,13 @@ const inspirations: Inspiration[] = [
   {
     image: "/Paaji.png",
     name: "Manu Arora aka Manu Paaji",
-    description: "Inspired my shift from product design into frontend engineering.",
+    description: "Inspired my shift from product design into design engineering and frontend architecture.",
     link: "https://manuarora.in",
   },
   {
     image: "/Kirat.png",
     name: "Harkirat Singh",
-    description: "Helped strengthen my foundation in software engineering.",
+    description: "Helped strengthen my foundation in building optimized and high performing software systems.",
     link: "https://x.com/kirat_tw",
   },
   {
@@ -35,7 +35,7 @@ const inspirations: Inspiration[] = [
   {
     image: "/Ansh.png",
     name: "Ansh Mehra",
-    description: "Practical AI, prompting, and creative problem-solving.",
+    description: "Practical AI, prompting,creative problem-solving and AI integration in our daily lives.",
     link: "https://anshmehra.com",
   },
   {
