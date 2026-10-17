@@ -6,6 +6,7 @@ import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 
 import MusicPlayer from "@/components/music-player";
+import { HideFloatingSocialBar } from "@/components/social-links";
 import ThemeButton from "@/components/ui/theme-button";
 import { useColorTheme } from "@/context/theme-provider";
 import type { Theme } from "@/lib/theme";
@@ -87,6 +88,7 @@ export default function NotFound() {
 
   return (
     <div className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center overflow-hidden bg-background px-4 pt-4 pb-6 text-foreground transition-colors duration-300 sm:px-6 sm:pt-5 sm:pb-32">
+      <HideFloatingSocialBar />
       <div className="z-50 flex w-full items-center justify-between">
         <Link
           href="/"

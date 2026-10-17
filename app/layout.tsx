@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Instrument_Serif } from "next/font/google";
 import Script from "next/script";
 
-import SocialLinks from "@/components/social-links";
+import SocialLinks, { SocialBarVisibility } from "@/components/social-links";
 import { ThemeProvider } from "@/context/theme-provider";
 import "./globals.css";
 
@@ -52,8 +52,10 @@ export default function RootLayout({
           {`(function(){try{var t=localStorage.getItem("color-theme");if(t&&t!=="default")document.documentElement.dataset.theme=t}catch(e){}})();`}
         </Script>
         <ThemeProvider>
-          {children}
-          <SocialLinks />
+          <SocialBarVisibility>
+            {children}
+            <SocialLinks />
+          </SocialBarVisibility>
         </ThemeProvider>
       </body>
     </html>

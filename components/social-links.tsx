@@ -6,7 +6,14 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "motion/react";
-import { useState } from "react";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+  type ReactNode,
+} from "react";
 import type { IconType } from "react-icons";
 import {
   TbBrandGithub,
@@ -35,6 +42,33 @@ const socialLinks: SocialLink[] = [
     icon: TbBrandGithub,
   },
 ];
+
+const SocialBarVisibilityContext = createContext({
+  hidden: false,
+  setHidden: (_hidden: boolean) => {},
+});
+
+export function SocialBarVisibility({ children }: { children: ReactNode }) {
+  const [hidden, setHidden] = useState(false);
+  const value = useMemo(() => ({ hidden, setHidden }), [hidden]);
+
+  return (
+    <SocialBarVisibilityContext.Provider value={value}>
+      {children}
+    </SocialBarVisibilityContext.Provider>
+  );
+}
+
+export function HideFloatingSocialBar() {
+  const { setHidden } = useContext(SocialBarVisibilityContext);
+
+  useEffect(() => {
+    setHidden(true);
+    return () => setHidden(false);
+  }, [setHidden]);
+
+  return null;
+}
 
 function SocialLinkBadge({ name, href, icon: Icon }: SocialLink) {
   const [isHovered, setIsHovered] = useState(false);
@@ -79,6 +113,7 @@ function SocialLinkBadge({ name, href, icon: Icon }: SocialLink) {
 }
 
 export default function SocialLinks() {
+  const { hidden: forceHidden } = useContext(SocialBarVisibilityContext);
   const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
 
@@ -90,6 +125,10 @@ export default function SocialLinks() {
       setHidden(false);
     }
   });
+
+  if (forceHidden) {
+    return null;
+  }
 
   return (
     <motion.aside

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Header from "@/components/header";
 import PageMain from "@/components/page-main";
+import { HideFloatingSocialBar } from "@/components/social-links";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -15,6 +16,7 @@ type GalleryLayoutProps = {
 export default function GalleryLayout({ children }: GalleryLayoutProps) {
   return (
     <div className="min-h-screen overflow-x-clip bg-background text-foreground">
+      <HideFloatingSocialBar />
       <PageMain>
         <Header />
         {children}
