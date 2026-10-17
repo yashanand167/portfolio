@@ -24,6 +24,15 @@ const THEME_IMAGES: Record<Theme, string> = {
     "https://i.pinimg.com/1200x/8b/0d/50/8b0d50618f7fff4b8f1647da8035c717.jpg",
 };
 
+const THEME_PLACES: Record<Theme, { name: string; detail: string }> = {
+  default: { name: "London, UK", detail: "51.5072° N, 0.1276° W" },
+  rose: { name: "Los Angeles, CA", detail: "34.0522° N, 118.2437° W" },
+  blue: { name: "Open Sea", detail: "Somewhere offshore" },
+  green: { name: "The Forest", detail: "A quiet woodland" },
+  orange: { name: "New York, NY", detail: "40.7128° N, 74.0060° W" },
+  purple: { name: "Rain Street", detail: "After the rain" },
+};
+
 function usePreloadedThemeImage(theme: Theme) {
   const nextSrc = THEME_IMAGES[theme];
   const [src, setSrc] = useState(nextSrc);
@@ -85,6 +94,7 @@ export default function NotFound() {
     setIsPlaying(playing);
   }, []);
   const imageSrc = usePreloadedThemeImage(theme);
+  const place = THEME_PLACES[theme];
 
   return (
     <div className="relative mx-auto flex min-h-screen max-w-5xl flex-col items-center overflow-hidden bg-background px-4 pt-4 pb-6 text-foreground transition-colors duration-300 sm:px-6 sm:pt-5 sm:pb-32">
@@ -121,9 +131,9 @@ export default function NotFound() {
         <div className="mt-5 flex w-full max-w-3xl items-center justify-center gap-4 sm:mt-8 sm:gap-5">
           <div className="relative hidden h-48 w-10 shrink-0 sm:block">
             <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-90 whitespace-nowrap text-[10px] tracking-[0.18em] uppercase md:text-[11px]">
-              New York, NY{" "}
+              {place.name}{" "}
               <span className="tracking-normal text-muted-foreground normal-case">
-                40.7128° N, 74.0060° W
+                {place.detail}
               </span>
             </p>
           </div>
@@ -156,7 +166,7 @@ export default function NotFound() {
 
             <img
               src={imageSrc}
-              alt="Theme scenery"
+              alt={place.name}
               className="relative z-0 aspect-[16/10] w-full object-cover"
             />
           </div>
