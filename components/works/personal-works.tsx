@@ -23,7 +23,7 @@ const personalWorks: PersonalWork[] = [
     subtitle: "Keyboard practice playground",
     description:
       "A keyboard practice playground where I crafted the UI keyboard from scratch using a context provider.",
-    image: "/kylp.png",
+    image: "https://kylp-mu.vercel.app/kylp.png",
     links: ["https://kylp-mu.vercel.app/"],
   },
   {
@@ -31,7 +31,7 @@ const personalWorks: PersonalWork[] = [
     subtitle: "AI-powered survey platform",
     description:
       "An AI powered survey platform for collecting user feedback and creating a survey with AI features.",
-    image: "/AskNow.png",
+    image: "https://asknow.vercel.app/favicon.ico",
     links: ["https://asknow.vercel.app/"],
   },
   {

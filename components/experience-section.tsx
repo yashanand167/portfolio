@@ -191,7 +191,7 @@ function Company1() {
       caseStudyHref="/blogs/design-engineering/shipping-dseide-healthcare-network"
       logo={
         <Image
-          src="/Dseide.png"
+          src="https://framerusercontent.com/images/tFMXOjpwFGd6isAVP9QY2mydJtQ.png"
           alt="Dseide"
           width={40}
           height={40}

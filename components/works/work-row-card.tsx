@@ -26,7 +26,9 @@ export default function WorkRowCard({
           fill
           loading="lazy"
           sizes="(max-width: 640px) 40px, 48px"
-          className="object-cover"
+          className={
+            image.startsWith("http") ? "object-contain p-1" : "object-cover"
+          }
         />
       </div>
 
