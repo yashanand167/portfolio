@@ -133,11 +133,11 @@ export default function Header() {
   const [hovered, setHovered] = useState(false);
 
   return (
-    <header className="z-50 flex w-full flex-wrap items-center justify-between gap-x-3 gap-y-2">
-      <div className="flex min-w-0 flex-1 items-center gap-2 sm:gap-3">
+    <header className="z-50 w-full">
+      <div className="flex w-full min-w-0 flex-wrap items-center gap-x-3 gap-y-3 sm:flex-nowrap sm:gap-3">
         <Link
           href="/"
-          className="aspect-square shrink-0 rounded-lg border border-border bg-card transition-opacity hover:opacity-80"
+          className="order-1 aspect-square shrink-0 rounded-lg border border-border bg-card transition-opacity hover:opacity-80"
         >
           <Image
             src="/Logo.png"
@@ -148,13 +148,12 @@ export default function Header() {
             className="size-8 sm:size-10"
           />
         </Link>
-        <ul className="flex min-w-0 gap-2 text-xs font-medium sm:gap-4 sm:text-sm lg:text-base">
+        <ul className="order-3 flex w-full min-w-0 gap-3 text-xs font-medium sm:order-2 sm:w-auto sm:gap-4 sm:text-sm lg:text-base">
           {navItems.map((item) => (
             <NavLink key={item.href} {...item} />
           ))}
         </ul>
-      </div>
-      <div className="flex shrink-0 items-center gap-2">
+        <div className="order-2 ml-auto flex shrink-0 items-center gap-2 sm:order-3">
         <ThemeButton />
         <motion.a
           href={resumeUrl}
@@ -204,6 +203,7 @@ export default function Header() {
             )}
           </AnimatePresence>
         </motion.a>
+        </div>
       </div>
     </header>
   );
