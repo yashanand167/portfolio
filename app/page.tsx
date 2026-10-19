@@ -7,49 +7,52 @@ import ProfileAvatar from "@/components/profile-avatar";
 import TestimonialSection from "@/components/testimonal-section";
 import Footer from "@/components/footer";
 import PageMain from "@/components/page-main";
+import PageReveal from "@/components/page-reveal";
 
 export default function Home() {
   return (
     <div className="min-h-screen overflow-x-clip bg-background text-foreground">
       <PageMain>
-        <Header />
+        <PageReveal>
+          <Header />
 
-        <section className="mt-8 w-full sm:mt-10">
-          <h1 className="text-xl font-medium sm:text-2xl lg:text-3xl">
-            <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
-              <span className="font-serif font-bold">Hey, I am</span>
-              <ProfileAvatar />
-              <span className="font-serif font-bold">Yash Anand</span>
-            </span>
-          </h1>
-          <p className="page-lead mt-3 max-w-2xl sm:text-lg">
-            <span className="font-medium text-foreground">Design Engineer</span>{" "}
-            crafting at the intersection of{" "}
-            <span className="font-medium text-foreground">Product Design</span>{" "}
-            and{" "}
-            <span className="font-medium text-foreground">
-              Frontend Architecture
-            </span>
-            , shaping clear interfaces and shipping them as polished, modern web
-            experiences.
-          </p>
-          <TechStack />
-          <Separator />
-          <div className="mt-8 w-full overflow-x-auto">
-            <GitHubContributionsSection />
-          </div>
-          <Separator />
-        </section>
-        <section>
-          <ExperienceSection />
-          <Separator />
-        </section>
-        <section>
-          <TestimonialSection />
-        </section>
-        <section className="mt-8 sm:mt-10">
-          <Footer />
-        </section>
+          <section className="mt-8 w-full sm:mt-10">
+            <h1 className="text-xl font-medium sm:text-2xl lg:text-3xl">
+              <span className="inline-flex flex-wrap items-center gap-x-2 gap-y-1">
+                <span className="font-serif font-bold">Hey, I am</span>
+                <ProfileAvatar />
+                <span className="font-serif font-bold">Yash Anand</span>
+              </span>
+            </h1>
+            <p className="page-lead mt-3 max-w-2xl sm:text-lg">
+              <span className="font-medium text-foreground">Design Engineer</span>{" "}
+              crafting at the intersection of{" "}
+              <span className="font-medium text-foreground">Product Design</span>{" "}
+              and{" "}
+              <span className="font-medium text-foreground">
+                Frontend Architecture
+              </span>
+              , shaping clear interfaces and shipping them as polished, modern web
+              experiences.
+            </p>
+            <TechStack />
+            <Separator />
+            <div className="mt-8 w-full overflow-x-auto">
+              <GitHubContributionsSection />
+            </div>
+            <Separator />
+          </section>
+          <section>
+            <ExperienceSection />
+            <Separator />
+          </section>
+          <section>
+            <TestimonialSection />
+          </section>
+          <section className="mt-8 sm:mt-10">
+            <Footer />
+          </section>
+        </PageReveal>
       </PageMain>
     </div>
   );
