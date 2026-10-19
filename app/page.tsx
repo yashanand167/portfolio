@@ -4,7 +4,6 @@ import TechStack from "@/components/tech-stack";
 import Separator from "@/components/separator";
 import ExperienceSection from "@/components/experience-section";
 import ProfileAvatar from "@/components/profile-avatar";
-import TestimonialSection from "@/components/testimonal-section";
 import Footer from "@/components/footer";
 import PageMain from "@/components/page-main";
 import PageReveal from "@/components/page-reveal";
@@ -45,9 +44,6 @@ export default function Home() {
           <section>
             <ExperienceSection />
             <Separator />
-          </section>
-          <section>
-            <TestimonialSection />
           </section>
           <section className="mt-8 sm:mt-10">
             <Footer />
