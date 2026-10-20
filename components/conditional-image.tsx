@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import type { ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Coffee, MoonIcon, SunIcon } from "lucide-react";
 
 type TimeOfDay = "morning" | "afternoon" | "evening" | "night";
@@ -39,7 +41,16 @@ const captions: Record<TimeOfDay, { text: string; icon: ReactNode }> = {
 };
 
 export default function ConditionalImage() {
-  const timeOfDay = getTimeOfDay();
+  const [timeOfDay, setTimeOfDay] = useState<TimeOfDay | null>(null);
+
+  useEffect(() => {
+    setTimeOfDay(getTimeOfDay());
+  }, []);
+
+  if (!timeOfDay) {
+    return <div className="mx-auto aspect-[768/431] w-full max-w-3xl" />;
+  }
+
   const caption = captions[timeOfDay];
 
   return (
