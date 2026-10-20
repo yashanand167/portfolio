@@ -1,12 +1,13 @@
 import Header from "@/components/header";
 import GitHubContributionsSection from "@/components/github-contributions-section";
-import TechStack from "@/components/tech-stack";
+// import TechStack from "@/components/tech-stack";
 import Separator from "@/components/separator";
 import ExperienceSection from "@/components/experience-section";
 import ProfileAvatar from "@/components/profile-avatar";
 import Footer from "@/components/footer";
 import PageMain from "@/components/page-main";
 import PageReveal from "@/components/page-reveal";
+import ConditionalImage from "@/components/conditional-image";
 
 export default function Home() {
   return (
@@ -34,7 +35,10 @@ export default function Home() {
               , shaping clear interfaces and shipping them as polished, modern web
               experiences.
             </p>
-            <TechStack />
+            {/* <TechStack /> */}
+            <div className="mt-8">
+              <ConditionalImage />
+            </div>
             <Separator />
             <div className="mt-8 w-full overflow-x-auto">
               <GitHubContributionsSection />
