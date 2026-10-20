@@ -10,7 +10,7 @@ function getTimeOfDay(): TimeOfDay {
   const hours = new Date().getHours();
   if (hours < 12) return "morning";
   if (hours < 18) return "afternoon";
-  if (hours < 22) return "evening";
+  if (hours < 21) return "evening";
   return "night";
 }
 
