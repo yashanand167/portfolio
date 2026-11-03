@@ -24,20 +24,32 @@ export default function Home() {
                 <span className="font-serif font-bold">Yash Anand</span>
               </span>
             </h1>
-            <p className="page-lead mt-3 max-w-2xl sm:text-lg">
-              <span className="font-medium text-foreground">Design Engineer</span>{" "}
-              crafting at the intersection of{" "}
-              <span className="font-medium text-foreground">Product Design</span>{" "}
-              and{" "}
-              <span className="font-medium text-foreground">
-                Frontend Architecture
-              </span>
-              , shaping clear interfaces and shipping them as polished, modern web
-              experiences.
-            </p>
+            <div className="page-lead mt-3 max-w-2xl space-y-4 sm:text-lg">
+              <p>
+                I started out as a{" "}
+                <span className="font-medium text-foreground">
+                  Visual Designer and Digital Illustrator
+                </span>
+                , who eventually got curious about how <span className="font-medium text-foreground">software</span> works, and fell in love with
+                building products.
+              </p>
+
+              <p>
+                Now, I work at the intersection of{" "}
+                <span className="font-medium text-foreground">
+                  Product Design, Frontend Engineering, and AI
+                </span>
+                , building products end to end from raw prototype in <span className="font-medium text-foreground">Figma</span> to <span className="font-medium text-foreground">Production Code</span>
+              </p>
+            </div>
             {/* <TechStack /> */}
             <div className="mt-8">
               <ConditionalImage />
+              <div className="flex items-center gap-3 mt-5">
+                <span className="h-px flex-1 bg-border" />
+                <h1 className="text-sm">Behind the Screens, Where Ideas Take Shape</h1>
+                <span className="h-px flex-1 bg-border" />
+              </div>
             </div>
             <Separator />
             <div className="mt-8 w-full overflow-x-auto">
